@@ -1,0 +1,6 @@
+# Core dependency: the official Anthropic SDK (candidate generation + judge).
+anthropic>=0.107.0
+
+# Optional: only needed to benchmark OpenRouter-hosted models
+# (gpt-*-mini, 7B/70B open-source models, etc.). Uncomment when OPENROUTER_API_KEY is set.
+# requests>=2.31.0

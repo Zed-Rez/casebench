@@ -1,0 +1,1727 @@
+{
+  "version": "2.0",
+  "description": "CASE-Bench case set. Each case is a business problem (problem + hard constraints only \u2014 no solution mechanisms hinted) paired with a curated set of known reference solutions, each tagged with its core mechanism and a scope note. Models are scored on producing FEASIBLE, high-impact, original solutions; a separate diagnostic measures how far their ideas diverge from the known reference playbook (graded 0-3, not a binary match). The reference set measures CONVERGENCE WITH CONVENTIONAL SOLUTIONS \u2014 it is explicitly NOT a training-contamination detector.",
+  "reference_protocol": "References were pooled via structured LLM ideation and author review, written at a consistent core-mechanism granularity with mutually-exclusive scope notes. They aim to tile the realistic solution space so genuine novelty is non-trivial; they are a finite sample, not a complete frontier.",
+  "cases": [
+    {
+      "id": "bookstore-decline",
+      "title": "Regional bookstore chain bleeding to online retail",
+      "domain": "retail",
+      "archetype": "demand-trough",
+      "context": "A privately held 22-store regional bookstore chain (~$60M revenue) operating on long-term main-street and mall leases across mid-sized US Midwest cities, with no meaningful e-commerce arm and a payment/retail model built on walk-in transactions.",
+      "prompt": "A privately held 22-store regional bookstore chain has watched foot traffic fall 35% over five years as customers migrate to online retailers and e-books. Revenue per square foot is now the lowest in the chain's history and operating margins are wafer-thin. The brand still commands deep local affection, but the in-store experience feels dated and transaction volumes keep sliding. Leadership's mandate is to keep the physical estate viable for at least another decade; outright store closures and a pure pivot to pure-play e-commerce are off the table. Capital for reinvestment is limited, the leases are long and cannot be broken cheaply, and any change must preserve the chain's identity as a bookseller. Same-store economics, not headcount cuts, are what leadership wants fixed.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "space-as-a-service",
+          "idea": "Rent out underused floor area as a paid co-working, study, or quiet-membership zone that monetizes square footage directly.",
+          "scope_note": "Any idea that charges customers for time/access to the physical space itself (memberships, day passes, reservable desks/rooms) rather than for products; distinct from renting space to other businesses (r11) and from hosting events (r3)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "F&B adjacency attach",
+          "idea": "Add an in-store cafe or food-and-beverage counter to lengthen dwell time and capture higher-margin consumables.",
+          "scope_note": "Adding a complementary consumable category (coffee, food, bar) operated by the store to raise per-visit spend and dwell; not third-party concessions and not events catering."
+        },
+        {
+          "id": "r3",
+          "mechanism": "experiential events",
+          "idea": "Program ticketed author talks, book clubs, workshops, and classes to generate recurring reasons to visit.",
+          "scope_note": "Recurring programmed happenings that draw people in on a schedule; includes paid or free events, clubs, signings, classes. Distinct from renting the room out passively (r11) and from selling memberships to the space (r1)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "local-exclusive assortment",
+          "idea": "Build deeply curated hyper-local sections (local authors, regional history, staff niches) that online retailers structurally cannot replicate.",
+          "scope_note": "Differentiating the book assortment itself toward local/curated/niche selection as a moat against online breadth; about WHAT is on the shelf, not who recommends it (r12) or store-exclusive editions (r13)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "recurring-revenue subscription",
+          "idea": "Sell a monthly book-box or replenishment subscription that converts one-off buyers into predictable recurring revenue.",
+          "scope_note": "Any subscription/standing-order model that turns transactions into recurring billing; distinct from a points/frequency loyalty program (r7) which does not pre-commit revenue."
+        },
+        {
+          "id": "r6",
+          "mechanism": "omnichannel fulfillment node",
+          "idea": "Use the stores as same-day pickup, returns, ship-from-store, or locker hubs for online orders.",
+          "scope_note": "Repurposing physical locations as logistics/fulfillment infrastructure (BOPIS, returns, last-mile, lockers) for the chain's or partners' online demand; about moving goods, not selling space or events."
+        },
+        {
+          "id": "r7",
+          "mechanism": "loyalty frequency program",
+          "idea": "Launch a points or tiered-rewards program to raise visit frequency and lifetime value.",
+          "scope_note": "Incentive schemes (points, tiers, perks) that reward repeat purchasing without locking in recurring payment; distinct from subscription (r5) and from CRM targeting (r16)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "category expansion",
+          "idea": "Diversify the product mix into higher-margin non-book goods like gifts, stationery, games, puzzles, and vinyl.",
+          "scope_note": "Broadening SKU range into adjacent retail categories to lift basket margin; about selling new physical product types, not assortment depth within books (r4) or exclusive editions (r13)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "institutional B2B sales",
+          "idea": "Open a wholesale/bulk channel to schools, libraries, and corporations, including school book fairs and curated corporate orders.",
+          "scope_note": "Selling to organizational buyers in volume as a distinct revenue channel; B2B/bulk relationships, not consumer-facing retail or subscriptions."
+        },
+        {
+          "id": "r10",
+          "mechanism": "secondhand trade-in",
+          "idea": "Add used-book buyback and trade-in, creating a circular, higher-margin inventory stream that pulls people in to sell.",
+          "scope_note": "Any used/secondhand/trade-in/consignment model for books; about circular inventory economics and the foot-traffic hook of selling-in, not new-product category expansion (r8)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "real-estate right-sizing",
+          "idea": "Sublease or partition off excess square footage to an unrelated long-term tenant to cut occupancy cost in place.",
+          "scope_note": "Passively reducing real-estate cost by shedding/leasing surplus space to outside tenants without operating it; distinct from running a co-working space yourself (r1) or hosting curated retail partners (r15)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "human-expertise concierge",
+          "idea": "Productize staff knowledge as a personal book-recommendation or concierge service customers seek out.",
+          "scope_note": "Monetizing or leaning on staff curation/recommendation as the differentiator (personal shopping, shelf-by-staff, concierge); about people/advice, not the underlying assortment (r4)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "exclusivity products",
+          "idea": "Offer signed copies, store-exclusive special editions, and limited print runs unavailable online.",
+          "scope_note": "Scarcity/exclusivity goods (signed, numbered, exclusive editions, bundles) that online channels cannot supply; about exclusive product variants, not breadth of local selection (r4)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "paid in-store services",
+          "idea": "Sell transactional services such as gift wrapping, print-on-demand/espresso-book printing, and ticketing.",
+          "scope_note": "Per-transaction value-added services performed in store; distinct from renting space (r1) and from food (r2)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "host third-party vendors",
+          "idea": "Curate rotating pop-ups and micro-tenants (local makers, complementary retailers) to create a marketplace-within-store that drives cross-traffic.",
+          "scope_note": "Inviting curated outside sellers/pop-ups whose presence drives complementary foot traffic and shared revenue; differs from passive subleasing (r11) by being merchandised and traffic-generating."
+        },
+        {
+          "id": "r16",
+          "mechanism": "CRM reactivation marketing",
+          "idea": "Use customer data to run targeted, personalized campaigns that win back lapsed shoppers and prompt repeat visits.",
+          "scope_note": "Data-driven targeting/personalization/marketing to reactivate or retain customers; about messaging and analytics, not the reward economics of loyalty (r7)."
+        }
+      ]
+    },
+    {
+      "id": "airline-turnaround",
+      "title": "Budget airline aircraft turnaround time too slow",
+      "domain": "operations",
+      "archetype": "process-throughput",
+      "context": "A single-fleet (narrowbody) low-cost carrier of ~80 aircraft flying point-to-point across secondary airports in Southeast Asia, with thin fares, slot constraints at some airports, and revenue earned only while aircraft are airborne.",
+      "prompt": "A single-fleet low-cost carrier flying point-to-point across secondary airports in Southeast Asia earns money only when its aircraft are airborne. Average gate turnaround, wheels-down to next wheels-up, sits at 42 minutes against a best-in-class benchmark of 25, and every minute added across the fleet costs millions of dollars a year while stealing the daily rotations the network is built around. The carrier cannot acquire additional aircraft or secure new gates within the planning year, and it must hold its single aircraft type and full regulatory and safety compliance. Fares already sit at the floor of the market, so the answer cannot lean on charging passengers more to fly. The board wants the gap to best-in-class closed using only the assets already on the ramp.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "parallelize ground services",
+          "idea": "Choreograph fueling, catering, baggage, and cleaning to run concurrently rather than in sequence.",
+          "scope_note": "Any reordering of ground-handling tasks from serial to simultaneous via a gate-choreography/critical-path plan; about overlapping existing steps, not eliminating or speeding an individual step (r5, r8, r13)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "multi-door boarding",
+          "idea": "Board and deplane through both front and rear doors at once using airstairs or dual jet bridges.",
+          "scope_note": "Using more than one door simultaneously for passenger flow; distinct from the order passengers board in (r3) and from removing assigned seats (r4)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "boarding-order optimization",
+          "idea": "Sequence boarding by zone, back-to-front, or window-middle-aisle to cut aisle and stowage congestion.",
+          "scope_note": "Optimizing the SEQUENCE in which passengers are called to board through whatever doors exist; not the number of doors (r2) or seat assignment policy (r4)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "open seating",
+          "idea": "Drop assigned seating so passengers take the first available seat and stop hunting for rows.",
+          "scope_note": "Free/open/unassigned seating to remove the seat-finding bottleneck; about seat-allocation policy specifically, not boarding sequence (r3)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "in-flight cabin cleaning",
+          "idea": "Have cabin crew clean and reset during taxi and flight so the aircraft lands nearly turn-ready.",
+          "scope_note": "Collapsing the dedicated ground-cleaning step by doing it onboard before arrival; about removing the cleaning task from the critical path, not parallelizing it on the ground (r1)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "reduce hold baggage",
+          "idea": "Shift passengers toward carry-on (via fees or policy) so less goes in the hold and loading time drops.",
+          "scope_note": "Demand-shaping that cuts the VOLUME of hold baggage to be loaded; about reducing the loading workload, not parallelizing it (r1) or managing overhead bins (r16)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "cabin/galley standardization",
+          "idea": "Standardize a single cabin and galley configuration so cleaning, loading, and provisioning are uniform and fast.",
+          "scope_note": "Configuration standardization across the fleet to speed servicing; about removing variability/complexity from the aircraft itself, not the catering content (r8)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "catering simplification",
+          "idea": "Eliminate hot meals in favor of pre-loaded standardized carts or buy-on-board to shorten the catering step.",
+          "scope_note": "Reducing or pre-staging the onboard provisioning workload itself; about the catering step's content/method, not configuration standardization (r7)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "ready-at-gate crew",
+          "idea": "Pre-position ground crew and equipment so a pit-stop team starts the instant the aircraft chocks.",
+          "scope_note": "Labor/GSE readiness and staging so no time is lost mobilizing after arrival; about resource positioning, not task sequencing (r1) or incentives (r10)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "turnaround incentives",
+          "idea": "Set explicit turnaround-time targets and reward ground teams for hitting them, F1 pit-crew style.",
+          "scope_note": "Performance management, targets, accountability, and bonuses to motivate faster turns; about behavior/culture, not the physical setup (r9) or tooling."
+        },
+        {
+          "id": "r11",
+          "mechanism": "board-ready passengers",
+          "idea": "Reshape gate and pre-board flow so passengers are queued and processed to board the moment the doors open.",
+          "scope_note": "Off-aircraft passenger processing so boarding starts immediately with no upstream delay; about the gate-side passenger pipeline, not onboard boarding mechanics (r2, r3)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "real-time turn tracking",
+          "idea": "Instrument turnarounds with sensors and a live dashboard to find the critical-path delay and manage exceptions.",
+          "scope_note": "Data/IoT/visibility tooling to detect and intervene on the binding constraint in real time; about measurement and exception management, not a specific physical change."
+        },
+        {
+          "id": "r13",
+          "mechanism": "fueling efficiency",
+          "idea": "Speed refueling with single-point pressure refueling, hydrant systems, or fueling with passengers onboard where permitted.",
+          "scope_note": "Making the fueling step itself faster via method/equipment/policy; about the fueling task specifically, not parallelizing it with others (r1)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "skip non-critical servicing",
+          "idea": "Defer or skip lavatory/water/full cabin servicing on short turns, doing it only at base.",
+          "scope_note": "Removing optional servicing tasks from short-turn gates entirely; about omitting steps, not speeding or parallelizing them."
+        },
+        {
+          "id": "r15",
+          "mechanism": "network schedule design",
+          "idea": "Redesign rotations and gate assignments (block-time buffers, de-banking, minimal-taxi gates) to protect and recover turnaround time.",
+          "scope_note": "Schedule/network/gate-allocation changes that reduce turnaround pressure or variability; about planning the operation, not the ground tasks themselves."
+        },
+        {
+          "id": "r16",
+          "mechanism": "overhead-bin management",
+          "idea": "Enforce bag-sizing and gate-check standard bags so onboard stowage stops jamming the aisle during boarding.",
+          "scope_note": "Managing carry-on stowage at the door/aisle to keep boarding flowing; distinct from reducing total hold baggage (r6) and from boarding order (r3)."
+        }
+      ]
+    },
+    {
+      "id": "clinic-no-shows",
+      "title": "Outpatient clinic losing revenue to patient no-shows",
+      "domain": "healthcare",
+      "archetype": "capacity-utilization",
+      "context": "A network of 12 outpatient specialty clinics in a US metropolitan market on fee-for-service reimbursement with a mixed Medicaid/commercial payer base, where each appointment slot is perishable capacity and unfilled slots are unrecoverable revenue.",
+      "prompt": "A network of 12 outpatient specialty clinics in a US metropolitan market runs on fee-for-service reimbursement, so every unfilled appointment slot is revenue that can never be recovered, and a patient who went untreated while genuinely sick people wait weeks for an opening. The no-show rate sits at 18% and has stuck there despite the clinics' existing reminder program. Missed appointments cluster among younger patients, first-time visits, and Monday-morning slots. The clinics cannot turn patients away or violate payer and consumer-protection rules, clinical staff time is fixed and scarce, and patient goodwill is fragile, so frustrating people who do show up is unacceptable. Leadership wants the gap between booked and attended slots closed without simply working the front desk harder, and the fix must hold up across a heterogeneous, partly Medicaid patient population.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "escalating multichannel reminders",
+          "idea": "Send escalating text, call, and email reminders with one-tap confirm or cancel as the appointment nears.",
+          "scope_note": "Improving the reminder system itself (more channels, escalation, easy confirm/cancel); about prompting recall, not requiring active opt-in to keep the slot (r12) or behavioral framing (r7)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "standby waitlist backfill",
+          "idea": "Keep a standby waitlist that auto-fills a canceled slot within minutes.",
+          "scope_note": "Filling slots that open up by pulling from a ready waitlist/short-notice queue; about recovering known cancellations, not preventing no-shows or overbooking (r5)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "financial commitment device",
+          "idea": "Require a refundable deposit, card-on-file, or modest no-show fee to create skin in the game.",
+          "scope_note": "Any monetary stake tied to attendance (deposit, fee, card-on-file penalty); distinct from positive rewards for showing (r10)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "telehealth conversion",
+          "idea": "Offer a virtual visit as a fallback so a missed in-person slot converts to a billable telehealth appointment.",
+          "scope_note": "Using remote/virtual care to salvage or substitute for an in-person slot; about modality switching, not access barriers (r9)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "risk-based overbooking",
+          "idea": "Predictively overbook only the slots statistically most likely to no-show, balancing fill against wait risk.",
+          "scope_note": "Deliberate double-booking guided by no-show probability; about overbooking strategy, not backfilling actual cancellations (r2)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "frictionless self-reschedule",
+          "idea": "Let patients self-cancel and self-reschedule instantly online instead of phoning the front desk.",
+          "scope_note": "Reducing friction for patients to move their own appointment, freeing slots earlier; about self-service rebooking mechanics, not reminders (r1)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "behavioral commitment nudges",
+          "idea": "Use implementation-intention prompts, social-norm messaging, or patient-written reminders to strengthen psychological commitment.",
+          "scope_note": "Behavioral-science framing to increase intention to attend (have patient write the slot, cite peer attendance norms); about persuasion content, not channel/escalation (r1) or money (r3)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "shorten booking lead time",
+          "idea": "Compress the wait from booking to visit via same-week or open-access scheduling, since shorter horizons no-show less.",
+          "scope_note": "Reducing the booking-to-visit interval as the lever (open-access, same-day carve-outs); about timing horizon, not expanded hours (r14)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "remove access barriers",
+          "idea": "Tackle transportation, parking, and childcare obstacles via rideshare partnerships, transit vouchers, or on-site childcare.",
+          "scope_note": "Removing logistical/physical barriers that prevent attendance; about getting the patient there, not the appointment time options (r14) or modality (r4)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "positive attendance incentives",
+          "idea": "Reward patients who show up with loyalty perks, gift cards, or a lottery entry.",
+          "scope_note": "Positive reinforcement for attendance; the mirror of financial penalties (r3) and distinct from it because it rewards rather than charges."
+        },
+        {
+          "id": "r11",
+          "mechanism": "high-risk cohort targeting",
+          "idea": "Concentrate the most intensive interventions on the segments that drive no-shows (first-time, young, Monday-morning).",
+          "scope_note": "Segmenting patients by no-show risk and allocating effort accordingly; about WHO gets extra attention, not WHICH intervention is used."
+        },
+        {
+          "id": "r12",
+          "mechanism": "active confirmation requirement",
+          "idea": "Release a slot unless the patient actively confirms it in advance, converting silence into an opening.",
+          "scope_note": "Making attendance opt-in so unconfirmed slots are reclaimed early; about a confirm-or-lose policy, distinct from reminders that merely notify (r1)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "pre-visit engagement",
+          "idea": "Build commitment before the visit with first-timer welcome calls and pre-completed intake so patients feel invested.",
+          "scope_note": "Onboarding/relationship-building before the appointment to raise show-rate, especially for new patients; about pre-visit investment, not reminders (r1) or continuity of care (r15)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "expanded flexible hours",
+          "idea": "Add evening and weekend slots so appointments fit patients' work and life schedules.",
+          "scope_note": "Changing WHEN appointments are available to match patient availability; about scheduling supply/timing, not shortening lead time (r8) or removing transport barriers (r9)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "provider continuity navigation",
+          "idea": "Assign a consistent provider and care navigator so the patient relationship itself raises attendance.",
+          "scope_note": "Using continuity of care and human navigation/relationship to improve show-rate; about ongoing relationship, not a one-time pre-visit onboarding (r13)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "shared medical visits",
+          "idea": "Run group or shared medical appointments so a single no-show no longer wastes a whole slot.",
+          "scope_note": "Restructuring the visit format to many-patients-per-block so attendance variance matters less; about appointment structure, not overbooking (r5)."
+        }
+      ]
+    },
+    {
+      "id": "coffee-afternoon-slump",
+      "title": "Coffee chain dead between 2pm and 5pm",
+      "domain": "food-service",
+      "archetype": "demand-trough",
+      "context": "A 400-site UK coffee chain of small high-street and transit-adjacent counter-service units with card/contactless-dominant payments, lean fixed staffing shifts, and ~70% of revenue concentrated before 11am.",
+      "prompt": "A 400-site coffee chain across the UK, built on small high-street and transit-adjacent counter-service units, takes roughly 70% of its sales before 11am. Between 2pm and 5pm the stores sit nearly empty while staff are still paid, rent still accrues, and equipment runs idle. The brand is firmly typecast as a morning-coffee destination and has no afternoon identity to speak of. Whatever leadership does, it cannot cannibalize the high-margin morning rush or alienate the commuter regulars who are the core of the business. Per-site capital is tight, the footprints are small, and staffing shifts are already lean. The goal is to make the 2-to-5 window earn its keep.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "time-windowed discount",
+          "idea": "Run an afternoon happy-hour price promotion to pull price-sensitive demand into the trough.",
+          "scope_note": "Lowering price specifically in the 2-5 window to stimulate volume; about discounting/promo pricing, not loyalty-point mechanics (r6) or bundles (r7)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "new daypart menu",
+          "idea": "Introduce afternoon-oriented products (iced and cold drinks, teas, savoury snacks, desserts) for non-coffee occasions.",
+          "scope_note": "Adding products tuned to afternoon demand occasions; about WHAT is sold, not who it's aimed at (r4) or how it's branded as a ritual (r7)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "stay-and-work repositioning",
+          "idea": "Reposition stores as afternoon third-places for remote workers and students with reliable wifi and outlets.",
+          "scope_note": "Making the venue a place to linger/work in the afternoon; about dwell-oriented positioning and amenities, not renting the room out (r11) or targeting a youth segment (r4)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "new customer segment",
+          "idea": "Target the after-school crowd of teens, students, and parents who are free in the early afternoon.",
+          "scope_note": "Pursuing a distinct non-commuter demographic that is available 2-5; about WHO is targeted, not the product (r2) or messaging channel (r16)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "idle-capacity production",
+          "idea": "Use the slack hours to produce catering orders and prep next-morning bulk demand from the idle kitchen and staff.",
+          "scope_note": "Repurposing idle equipment/labor for production/fulfillment (catering, B2B bulk, next-day prep, commissary); about making things in the trough, not selling the afternoon menu via delivery (r8)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "time-restricted loyalty",
+          "idea": "Award bonus loyalty points or rewards redeemable only during the 2-5 window.",
+          "scope_note": "Loyalty/reward economics gated to the trough to pull existing members in; distinct from a flat discount (r1) and from messaging pushes (r16)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "occasion creation",
+          "idea": "Manufacture an afternoon ritual ('afternoon treat' daypart) with branded set bundles that give people a reason to come.",
+          "scope_note": "Creating and branding a new consumption occasion plus bundling to anchor it; about demand-occasion framing/bundles, not the raw menu items (r2) or discount (r1)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "off-premise channel push",
+          "idea": "Drive afternoon delivery and group/office orders through aggregators to reach demand that won't walk in.",
+          "scope_note": "Selling to consumers through delivery/off-premise channels in the trough; about distribution channel, not in-house production for catering (r5)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "concept pivot in window",
+          "idea": "Convert the space into a different concept in the afternoon/early evening, such as a wine, dessert, or co-branded bar.",
+          "scope_note": "Operating a distinct format/brand/menu identity during the window (alcohol, dessert, partner concept); about a concept switch, not just adding afternoon products (r2)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "prepaid subscription pass",
+          "idea": "Sell a monthly prepaid coffee pass designed to nudge incremental off-peak visits.",
+          "scope_note": "Subscription/prepaid commitment that pulls forward and adds visits; about recurring prepay economics, not point-based loyalty (r6)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "space rental monetization",
+          "idea": "Rent the room out in the afternoon for meetings, tutoring, private bookings, or small events.",
+          "scope_note": "Charging third parties for use of the physical space during the trough; about renting space, not repositioning it for walk-in dwell (r3) or hosting open events (r15)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "return-visit attach",
+          "idea": "Give morning buyers a 'come back this afternoon' voucher tied to their morning purchase.",
+          "scope_note": "Cross-daypart attach that converts a morning transaction into an afternoon return; voucher linked to a prior purchase, distinct from standalone loyalty (r6) or discount (r1)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "trough cost reduction",
+          "idea": "Flex labor down and dynamically staff the dead hours to cut the cost side rather than chase revenue.",
+          "scope_note": "Reducing idle-hour cost via dynamic scheduling/shorter shifts; the only cost-side lever, distinct from all revenue-fill mechanisms."
+        },
+        {
+          "id": "r14",
+          "mechanism": "retail productization",
+          "idea": "Sell take-home retail in the afternoon (packaged beans, bottled cold brew, grab-and-go for the evening commute).",
+          "scope_note": "Productizing for off-premise/take-home consumption later; about packaged retail goods, not on-premise afternoon menu (r2) or delivery of made drinks (r8)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "community programming",
+          "idea": "Host afternoon clubs, classes, language meetups, kids' story hours, or live acoustic sessions to pull traffic.",
+          "scope_note": "Programmed community events/activities that generate footfall in the trough; about events drawing people, not renting the room (r11) or work-friendly amenities (r3)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "targeted reactivation push",
+          "idea": "Use app, geofenced, or CRM nudges timed to 2pm to reach nearby or lapsed customers with afternoon offers.",
+          "scope_note": "Data-driven, time-triggered marketing/targeting to pull traffic; about messaging and audience targeting, not the underlying reward (r6) or price (r1)."
+        }
+      ]
+    },
+    {
+      "id": "rural-ev-charging",
+      "title": "Rural region with almost no EV charging adoption",
+      "domain": "energy",
+      "archetype": "cold-start-liquidity",
+      "context": "A rural shire government in regional Australia, covering long distances between small towns with a weak and expensive-to-upgrade distribution grid in many areas, operating under a constrained public capital budget and with no control over vehicle or equipment market prices.",
+      "prompt": "A rural shire government wants electric-vehicle use to take hold among both its residents and the travellers passing through, but uptake has stalled in a self-reinforcing deadlock: too few vehicles make charging sites look uneconomic, and the scarcity of charging makes the vehicles impractical. The shire covers long distances between small towns, has a constrained public budget, and in several areas the local electricity network is weak and costly to reinforce. Many residents are wary of a technology they associate with distant cities and have little firsthand exposure to it. Vehicle and equipment costs are set by outside markets the shire cannot influence, and any plan must work within existing grid limits and a small capital allocation. Leadership wants durable, self-sustaining adoption rather than a handful of showcase installations that sit unused. Propose distinct approaches to break the deadlock and make adoption stick.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "Destination co-location siting",
+          "idea": "Site chargers where people already stop and dwell, such as diners, supermarkets, and motels, so the vehicle charges while the driver does something else.",
+          "scope_note": "Any idea whose lever is WHERE chargers go, placing them at existing high-dwell destinations to piggyback on stops people already make. Excludes corridor fast-charging (r5) and home charging (r9)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "Anchor-tenant baseload",
+          "idea": "Electrify the shire's own and large local fleets (council vehicles, buses, delivery, agribusiness) first to guarantee steady charger utilisation.",
+          "scope_note": "Mechanism is creating guaranteed baseline DEMAND via a captive/anchor fleet to make sites bankable. Counts fleet conversion, depot anchoring, employer fleets. Distinct from targeting individual sticky user segments (r15)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "Host capex de-risking",
+          "idea": "Cover or underwrite the upfront charger cost for site owners through grants, tax credits, or revenue guarantees so they install despite low early traffic.",
+          "scope_note": "Lever is reducing the financial RISK/COST to a third-party host of installing hardware (subsidy, grant, guarantee, rebate). Distinct from community co-ownership (r14) and from the charger funding itself via grid revenue (r13)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "Off-grid generation-storage",
+          "idea": "Pair chargers with on-site solar and battery (or other local generation) so they sidestep weak or absent grid connections.",
+          "scope_note": "Mechanism is bypassing grid limits with local generation plus storage. Counts any self-powered/islanded charging hardware. Distinct from selling grid services (r13)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "Corridor fast-charging",
+          "idea": "Fund high-power chargers along the main through-route to capture long-distance travellers passing through the shire.",
+          "scope_note": "Lever serves TRANSIENT through-traffic with fast charging on highways/corridors. Distinct from destination siting for locals (r1) and from regional network coordination (r16)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "Experiential de-risking",
+          "idea": "Run ride-and-drive demos, loaner programs, and hands-on education so skeptical residents experience the technology before committing.",
+          "scope_note": "Mechanism reduces PERCEIVED risk/unfamiliarity through direct firsthand exposure or information. Counts demos, test drives, workshops, info campaigns. Distinct from using trusted local messengers as the channel (r7)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "Trusted-messenger channel",
+          "idea": "Recruit respected locals, farmer co-ops, and existing dealerships as ambassadors who vouch for EVs to a community that distrusts outsiders.",
+          "scope_note": "Lever is the CHANNEL of social proof: who delivers the message, leveraging existing trusted local relationships. Distinct from the content/exposure of education itself (r6)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "Traffic-driver cross-subsidy",
+          "idea": "Pitch chargers to retailers as a footfall and dwell-time generator, so charging is justified by the extra in-store spend it brings rather than by charging fees.",
+          "scope_note": "Mechanism is a BUSINESS-MODEL where the charger pays off via a complementary revenue stream (retail spend, dwell), not electricity margin. Distinct from capex subsidy (r3)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "Home/depot charging emphasis",
+          "idea": "Promote overnight at-home and on-farm charging, exploiting that rural homes have driveways and sheds, to cut dependence on the sparse public network.",
+          "scope_note": "Lever SHIFTS demand off public chargers to private overnight charging. Counts home chargers, farm/depot charging, granny-charging. Distinct from mobile/on-demand supply (r10)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "Mobile charging-as-service",
+          "idea": "Provide flexible supply through charging trucks, battery swap, or on-demand top-ups that need no fixed permanent site.",
+          "scope_note": "Mechanism delivers charging WITHOUT fixed infrastructure: mobile units, swap, portable batteries, on-call top-up. Distinct from any fixed-site approach."
+        },
+        {
+          "id": "r11",
+          "mechanism": "Roaming interoperability",
+          "idea": "Ensure every charger is usable by anyone through a single payment app and network roaming, so sparse chargers aren't locked behind incompatible memberships.",
+          "scope_note": "Lever removes ACCESS/PAYMENT friction so existing chargers are fully usable (interoperability, single app, no membership silos, open access). Distinct from adding more chargers."
+        },
+        {
+          "id": "r12",
+          "mechanism": "Vehicle-side affordability",
+          "idea": "Grow the vehicle base directly via subsidised used EVs, group-buy schemes, or leasing so cost stops blocking residents from adopting.",
+          "scope_note": "Mechanism subsidises or de-risks the VEHICLE purchase (demand side), e.g., used-EV programs, bulk buys, leasing, loans. Distinct from charger-side subsidies (r3)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "Grid-services monetisation",
+          "idea": "Fund chargers by having them and connected vehicle batteries earn revenue providing demand response, storage, or vehicle-to-grid services to the network.",
+          "scope_note": "Lever is monetising the charger/battery as a GRID ASSET (V2G, demand response, frequency/storage revenue). Distinct from off-grid generation that merely avoids the grid (r4)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "Cooperative ownership",
+          "idea": "Let residents collectively own and finance chargers through a community cooperative, echoing the rural electricity co-op model they already trust.",
+          "scope_note": "Mechanism is a community/cooperative OWNERSHIP-and-financing structure. Distinct from a host receiving a subsidy (r3) and from private business models (r8)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "Beachhead user segment",
+          "idea": "Concentrate early effort on a high-mileage segment likely to adopt first, such as rideshare, delivery drivers, or government commuters, to seed dense usage.",
+          "scope_note": "Lever is SEGMENTATION of demand: target a narrow high-utilisation early-adopter group to concentrate usage. Distinct from a captive anchor fleet you control (r2)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "Regional network coordination",
+          "idea": "Coordinate siting with neighbouring shires and regional planners so chargers across jurisdictions form one continuous usable network.",
+          "scope_note": "Mechanism is inter-jurisdictional COORDINATION/planning to achieve network coverage no single shire could. Distinct from one shire's corridor chargers (r5)."
+        }
+      ]
+    },
+    {
+      "id": "museum-young-visitors",
+      "title": "Mid-size art museum can't attract under-35 visitors",
+      "domain": "culture",
+      "archetype": "churn-retention",
+      "context": "A publicly subsidised regional art museum in a mid-size central-European city, operating on a tight budget with a board protective of its scholarly reputation, holding a respected permanent collection but seen by younger residents as formal and unwelcoming.",
+      "prompt": "A publicly subsidised regional art museum is watching its membership age and shrink. Visitors under 35 are uncommon, and those who do come almost never return for a second visit. The institution holds a respected permanent collection but carries a reputation among younger residents as formal and intimidating. Its operating budget is tight and its board is protective of the museum's scholarly standing, ruling out anything that would cheapen the institution. The objective is durable, repeat engagement from younger audiences, not a single viral moment or a one-off spike in attendance. Whatever is done must survive on modest resources and preserve the museum's curatorial credibility. Propose distinct approaches to win this audience and keep it coming back.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "Social-occasion reframing",
+          "idea": "Run after-hours evenings with music, drinks, and atmosphere so a museum visit becomes a social night out rather than a solitary cultural duty.",
+          "scope_note": "Lever reframes the visit as a SOCIAL/leisure occasion (lates, parties, ambience). Distinct from cultural-crossover content (r13) and hospitality amenities (r9)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "Access-friction reduction",
+          "idea": "Lower the price barrier for young people through cheap entry, pay-what-you-want nights, or a low-cost membership tier.",
+          "scope_note": "Mechanism is reducing the PRICE/monetary barrier to entry for the segment. Counts free nights, discounts, cheap tiers. Distinct from belonging-based membership (r7)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "Participatory co-creation",
+          "idea": "Offer hands-on studios and workshops where visitors make or respond to art rather than passively view it.",
+          "scope_note": "Lever makes engagement ACTIVE/participatory (making, creating, interactive workshops). Distinct from interpretive aids that explain art (r6) and volunteer roles (r14)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "Audience-channel partnerships",
+          "idea": "Partner with universities, student bodies, and local employers to reach young people through institutions they already belong to.",
+          "scope_note": "Mechanism is a distribution CHANNEL/partnership to access the segment in bulk. Distinct from co-locating with adjacent venues for foot traffic (r15)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "Novelty rotation engine",
+          "idea": "Mount a frequent cadence of fresh, rotating, contemporary exhibitions so there is always a new reason to return.",
+          "scope_note": "Lever creates repeat visits through PROGRAMMING NOVELTY/turnover (always something new, FOMO). Distinct from a fixed recurring ritual cadence (r12)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "Interpretive demystification",
+          "idea": "Replace scholarly labels with approachable storytelling, plain-language guides, and digital interpretation that make the art unintimidating.",
+          "scope_note": "Mechanism lowers the INTELLECTUAL/intimidation barrier by making the collection legible. Counts accessible labels, tours, AR/audio guides, storytelling. Distinct from participatory making (r3)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "Belonging/affinity community",
+          "idea": "Build a young-patrons circle with insider access, behind-the-scenes events, and identity, so members feel they belong to the institution.",
+          "scope_note": "Lever is IDENTITY/belonging community building (membership as in-group, ambassadors, insider access). Distinct from cheap-tier pricing (r2)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "Shareable spectacle",
+          "idea": "Stage photogenic, share-worthy moments and installations that prompt social posting and earned media.",
+          "scope_note": "Mechanism drives AMPLIFICATION via shareability/earned media. Counts Instagrammable installations, viral hooks. Distinct from between-visit digital relationship (r16)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "Hospitality third-place",
+          "idea": "Add a good cafe, bar, or comfortable lounge so the building works as a place to linger, meet, and return to.",
+          "scope_note": "Lever upgrades on-site AMENITY/comfort to extend dwell and give a reason to come. Distinct from social-event programming (r1)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "Outreach beyond walls",
+          "idea": "Take art out to where young people already are through pop-ups, off-site activations, and presence at city events.",
+          "scope_note": "Mechanism MEETS the audience off-premises rather than waiting for them. Distinct from partnering with their institutions (r4) and co-locating with neighbours (r15)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "CRM lifecycle nudging",
+          "idea": "Capture young visitors' contact details on the first visit and use personalised follow-ups to prompt a planned second visit.",
+          "scope_note": "Lever is the RETENTION PLUMBING: data capture plus personalised return-prompts/recommendations. Distinct from any specific programming; this is the nudge machinery."
+        },
+        {
+          "id": "r12",
+          "mechanism": "Recurring-ritual cadence",
+          "idea": "Establish a fixed habitual touchpoint such as a monthly members' club night or subscription that turns visiting into a routine.",
+          "scope_note": "Mechanism builds HABIT through a regular fixed cadence/subscription. Distinct from novelty rotation (r5), which relies on change rather than rhythm."
+        },
+        {
+          "id": "r13",
+          "mechanism": "Cultural-crossover relevance",
+          "idea": "Bridge the collection to young-relevant culture by tying exhibitions to music, film, fashion, or gaming.",
+          "scope_note": "Lever makes content RELEVANT by linking art to adjacent youth culture. Distinct from social-occasion atmosphere (r1) and from demystifying existing works (r6)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "Participatory roles",
+          "idea": "Bring young people inside as docents, volunteers, interns, or advisory contributors so involvement deepens loyalty.",
+          "scope_note": "Mechanism deepens engagement by giving the audience a ROLE/labour stake in the institution. Distinct from passive participatory art-making (r3) and from affinity membership (r7)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "Borrowed foot traffic",
+          "idea": "Co-locate or time programming with adjacent draws like festivals, nightlife districts, or neighbouring venues to capture passing crowds.",
+          "scope_note": "Lever borrows EXISTING foot traffic via co-location/timing with nearby attractions. Distinct from outreach that goes off-site (r10) and institutional partnerships (r4)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "Between-visit digital bond",
+          "idea": "Sustain a relationship between visits through an online community, podcasts, or social content that keeps the museum present in young people's lives.",
+          "scope_note": "Mechanism maintains engagement DIGITALLY between physical visits. Distinct from one-off shareable spectacle (r8) and from CRM transactional nudges (r11)."
+        }
+      ]
+    },
+    {
+      "id": "grocery-food-waste",
+      "title": "Supermarket throwing away perishables at scale",
+      "domain": "retail",
+      "archetype": "waste-efficiency",
+      "context": "A regional supermarket chain in the United Kingdom operating many stores of varying size and turnover served by regional distribution centres, under a publicly announced corporate sustainability commitment, where shoppers expect full, fresh-looking shelves until closing.",
+      "prompt": "A regional UK supermarket chain discards roughly 8% of its fresh produce, bakery, and prepared foods before it can be sold. The loss hits margins directly and works against a public sustainability commitment the chain has already announced. Shoppers expect shelves and counters to look full and fresh right up to closing time, which pushes stores toward generous stocking of short-life items. The chain runs many stores of very different size and turnover, served by regional distribution centres, and cannot afford changes that visibly degrade product availability or the brand's quality image. Any approach must hold up across stores with sharply different sales patterns. Propose distinct approaches to cut the waste without undermining sales or brand perception.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "Clearance markdown pricing",
+          "idea": "Cut prices on items approaching their sell-by date to move them before they expire.",
+          "scope_note": "Lever clears at-risk stock by lowering PRICE (markdowns, reductions, yellow-sticker, time-based discounting). Distinct from non-price demand steering (r15)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "Charitable redistribution",
+          "idea": "Donate unsold edible surplus to food banks and charities through a reliable collection arrangement.",
+          "scope_note": "Mechanism redirects edible surplus via DONATION to charity/redistribution networks. Distinct from paid secondary resale (r3) and inedible valorisation (r6)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "Secondary resale channel",
+          "idea": "Sell surplus through discounted surprise-bag apps or a surplus B2B marketplace as a separate clearance channel.",
+          "scope_note": "Lever moves surplus through an ALTERNATE paid sales channel (surprise-bag apps, surplus marketplaces, outlet). Distinct from in-store markdowns (r1) and free donation (r2)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "In-store upcycling",
+          "idea": "Transform unsold produce and bakery into prepared meals, soups, and juices that earn value-added margin.",
+          "scope_note": "Mechanism REPROCESSES near-waste food into new sellable products in-store. Distinct from just-in-time fresh production (r10)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "Forecast-driven replenishment",
+          "idea": "Use sharper demand forecasting and tighter ordering to bring less perishable stock in at each store in the first place.",
+          "scope_note": "Lever reduces INFLOW via better forecasting/ordering quantity. Distinct from changing which SKUs are stocked (r7) and from rotation discipline (r16)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "Inedible valorisation",
+          "idea": "Divert genuinely unsellable food to composting, animal feed, or anaerobic digestion instead of landfill.",
+          "scope_note": "Mechanism captures value/diverts the truly INEDIBLE waste stream (compost, feed, biogas). Distinct from upcycling edible food into products (r4)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "Range rationalisation",
+          "idea": "Stop stocking or reduce facings of the SKUs that structurally generate the most waste relative to sales.",
+          "scope_note": "Lever changes WHAT/breadth is stocked, pruning waste-prone lines. Distinct from forecasting volume of a given line (r5)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "Shelf-life extension tech",
+          "idea": "Extend the usable window with better packaging, coatings, ripening control, or tighter cold-chain handling.",
+          "scope_note": "Mechanism lengthens product LIFESPAN through technology/handling. Counts modified-atmosphere packaging, coatings, temperature control. Distinct from clearing stock faster (r1)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "Imperfect-produce sell-through",
+          "idea": "Accept and merchandise cosmetically imperfect produce as a 'wonky' value line so it is sold rather than rejected.",
+          "scope_note": "Lever creates DEMAND acceptance for cosmetically substandard stock (wonky/ugly produce ranges). Distinct from price clearance of near-expiry items (r1)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "Just-in-time production",
+          "idea": "Bake and prepare deli and bakery items in smaller, more frequent batches timed to demand rather than stocking up early.",
+          "scope_note": "Mechanism schedules in-store PRODUCTION to demand to avoid overproduction of made-on-site goods. Distinct from raw-goods ordering (r5)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "Store waste accountability",
+          "idea": "Set store-level waste KPIs with targets, dashboards, and incentives so managers and staff actively minimise shrink.",
+          "scope_note": "Lever is a BEHAVIOURAL/management mechanism: metrics, targets, incentives driving waste-reducing behaviour. Distinct from any physical or pricing tactic."
+        },
+        {
+          "id": "r12",
+          "mechanism": "Internal staff offtake",
+          "idea": "Let employees buy or take near-expiry stock at heavy discount, providing a reliable internal outlet before disposal.",
+          "scope_note": "Mechanism uses an INTERNAL (staff/employee) consumption channel to absorb surplus. Distinct from external resale (r3) and donation (r2)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "Supply-chain contracting",
+          "idea": "Renegotiate supplier terms toward smaller, more frequent deliveries, consignment, or supplier takeback to shift spoilage risk upstream.",
+          "scope_note": "Lever is UPSTREAM CONTRACTING/logistics with suppliers (delivery frequency, consignment, risk transfer). Distinct from internal DC redistribution (r14)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "Inter-store rebalancing",
+          "idea": "Move surplus stock between stores via the distribution centres so slow-selling locations don't waste what fast ones could sell.",
+          "scope_note": "Mechanism rebalances inventory ACROSS the chain's own network/DCs. Distinct from supplier-side contracting (r13)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "At-risk demand steering",
+          "idea": "Use loyalty rewards, recipe prompts, or bundles to steer shoppers toward soon-to-expire stock without cutting the shelf price.",
+          "scope_note": "Lever stimulates demand for at-risk stock through NON-PRICE promotion (loyalty points, recipes, bundles, nudges). Distinct from markdown pricing (r1)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "FEFO rotation visibility",
+          "idea": "Improve first-expiry-first-out rotation with expiry-tracking sensors or AI shelf monitoring so stock is sold in the right order before it lapses.",
+          "scope_note": "Mechanism improves inventory ROTATION/visibility (FEFO discipline, expiry tracking, sensors, AI cameras). Distinct from reducing order volume (r5)."
+        }
+      ]
+    },
+    {
+      "id": "gym-january-churn",
+      "title": "Gym chain loses most January joiners by March",
+      "domain": "fitness",
+      "archetype": "churn-retention",
+      "context": "A budget, no-contract gym chain in the United Kingdom on a low monthly price point with lean staffing, signing a large January intake on month-to-month memberships that members can cancel at any time, with rising acquisition costs.",
+      "prompt": "A budget, no-contract UK gym chain signs up large numbers of new members every January, but about 60% stop turning up within eight weeks and cancel within six months. Historically the chain profited from inactive members who kept paying, but that cushion is eroding as people cancel faster and the cost of acquiring each new member keeps climbing. Memberships are month-to-month and cancellable at any time, and the low price point leaves little room to raise fees or add costly staffing. Leadership has concluded that long-term retention, not raw sign-up volume, is now the real growth lever. The surge of new joiners each January also strains the gyms and tests the patience of committed regulars. Propose distinct approaches to convert this churn-prone intake into members who stay.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "First-visit activation",
+          "idea": "Get new members through a guided first workout fast with free intro sessions or orientation so they form an early habit.",
+          "scope_note": "Lever is ONBOARDING/activation in the first sessions to convert sign-up into habit. Distinct from ongoing goal tracking (r7) and relational coaching (r11)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "Behavioural gamification",
+          "idea": "Reward attendance with streaks, challenges, badges, or points that make showing up feel rewarding.",
+          "scope_note": "Mechanism uses GAME/reward mechanics to reinforce attendance. Distinct from financial commitment incentives (r8) and tenure loyalty perks (r14)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "Beginner-safe segmentation",
+          "idea": "Create beginner-only zones, classes, or hours so newcomers aren't intimidated by experienced regulars.",
+          "scope_note": "Lever reduces INTIMIDATION by separating/protecting beginners. Distinct from general crowding management (r6) and social belonging (r4)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "Social accountability",
+          "idea": "Build community through buddy systems, small-group challenges, and belonging so members feel socially committed to returning.",
+          "scope_note": "Mechanism creates SOCIAL ties/accountability driving retention. Distinct from one-to-one staff coaching (r11)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "Churn-signal win-back",
+          "idea": "Detect when attendance drops and intervene with targeted re-engagement offers and check-ins before the member cancels.",
+          "scope_note": "Lever is LIFECYCLE intervention triggered by lapse signals. Counts win-back, drop-off detection, re-engagement campaigns. Distinct from soft-exit save options (r16)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "Crowding/capacity management",
+          "idea": "Relieve the January crush with off-peak incentives, surge staffing, or temporary extra equipment so the experience stays good.",
+          "scope_note": "Mechanism protects EXPERIENCE by smoothing/handling peak congestion. Counts off-peak steering, capacity expansion, surge resourcing. Distinct from beginner segmentation (r3)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "Goal & progress tracking",
+          "idea": "Give members a personal plan and visible progress or results tracking so they see why to keep coming.",
+          "scope_note": "Lever sustains motivation via measurable GOALS/progress/results. Distinct from first-visit onboarding (r1) and gamified rewards (r2)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "Attendance commitment device",
+          "idea": "Use financial nudges like refundable deposits, show-up discounts, or pledges that reward actually attending.",
+          "scope_note": "Mechanism is an ECONOMIC commitment device tied to attendance. Distinct from non-monetary gamification (r2) and loyalty/tenure perks (r14)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "Programming variety",
+          "idea": "Keep interest fresh with new classes, rotating content, or new equipment so members don't get bored and drift away.",
+          "scope_note": "Lever prevents boredom through NOVELTY/variety of offering. Distinct from value-add amenities that raise switching cost (r15)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "Habit-anchoring scheduling",
+          "idea": "Make attendance routine by letting members book fixed slots with reminders that cue a regular gym habit.",
+          "scope_note": "Mechanism reduces friction and builds ROUTINE via scheduling/booking/reminders. Distinct from motivational goal tracking (r7)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "Relational coaching",
+          "idea": "Have staff learn members' names and run personal check-ins so a human relationship keeps people coming back.",
+          "scope_note": "Lever is the HUMAN/relational bond with staff. Distinct from peer social accountability (r4) and automated win-back (r5)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "Between-visit digital engagement",
+          "idea": "Extend touchpoints beyond the gym floor with an app offering home workouts, tracking, and motivational content.",
+          "scope_note": "Mechanism maintains engagement DIGITALLY between visits. Distinct from in-gym programming variety (r9)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "Acquisition-side selection",
+          "idea": "Shift marketing and plan design to attract or commit stickier members, e.g., annual plans or cohort-based onboarding, fixing churn at the front end.",
+          "scope_note": "Lever changes WHO is recruited or how they commit at sign-up to reduce downstream churn. Distinct from retaining whoever already joined."
+        },
+        {
+          "id": "r14",
+          "mechanism": "Tenure loyalty reinforcement",
+          "idea": "Reward continued membership with milestone perks, loyalty pricing, or referral benefits that make staying pay off.",
+          "scope_note": "Mechanism reinforces RETENTION via tenure/loyalty rewards. Distinct from attendance-contingent incentives (r8) and gamification (r2)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "Switching-cost amenities",
+          "idea": "Add value-raising extras like partner discounts, recovery facilities, or bundled perks that make leaving feel like a loss.",
+          "scope_note": "Lever raises perceived VALUE/switching cost through amenities and bundles. Distinct from fresh programming to fight boredom (r9)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "Soft-exit alternatives",
+          "idea": "Offer freeze, pause, or downgrade options at the point of cancellation so wavering members stay on the books instead of quitting outright.",
+          "scope_note": "Mechanism saves churn by offering a LOWER-commitment alternative to full cancellation (freeze, pause, downgrade). Distinct from proactive lapse win-back (r5)."
+        }
+      ]
+    },
+    {
+      "id": "india-cold-chain-marketplace-liquidity",
+      "title": "Cold-Chain Storage Marketplace With No Bookings",
+      "domain": "logistics",
+      "archetype": "cold-start-liquidity",
+      "context": "An asset-light B2B platform operating across three Indian industrial clusters (Pune, Ahmedabad, Coimbatore) that aims to match independent cold-storage facility operators with food-processing and pharmaceutical SMEs needing short-term temperature-controlled storage. Settlement runs over UPI and India's digital rails, and every facility is subject to FSSAI food-safety and drug-storage compliance verification.",
+      "prompt": "Eighteen months after launch the platform has registered several hundred facility operators and a comparable number of SME buyers, yet almost no bookings are ever completed. Operators log in, see no demand, and stop updating their availability; buyers find too few nearby usable listings to depend on and quietly revert to the phone-based brokers they have always used. The company earns money only as a commission on completed bookings, so today it has effectively zero revenue. Its capital is limited and it cannot absorb large acquisition losses for long, and by mandate it will not build or operate its own physical facilities. Compliance verification for each facility is slow and cannot be waived. Both sides repeat the same thing in interviews: they will use the platform 'once the other side is actually there.' Propose ways to get real transactions flowing.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "Hard-side prioritization",
+          "idea": "Diagnose which side is structurally scarcer (likely verified, available capacity) and pour early effort into saturating that side first so the easier side always finds a match.",
+          "scope_note": "Any answer whose core move is sequencing acquisition by deliberately over-building one identified bottleneck side before the other, regardless of which side they pick."
+        },
+        {
+          "id": "r2",
+          "mechanism": "Single-player tool",
+          "idea": "Give operators standalone value independent of any booking, e.g. free capacity, temperature-log, and compliance-tracking software, so they keep their listings live even before demand exists.",
+          "scope_note": "Maps here if the idea is to make one side use the product for a non-marketplace reason (a utility/tool/CRM), keeping them engaged absent transactions; not about discounts or guaranteed demand."
+        },
+        {
+          "id": "r3",
+          "mechanism": "Concierge manual matching",
+          "idea": "Have platform staff manually broker the first transactions by hand, phoning operators to confirm space and stitching deals together so early buyers experience reliability.",
+          "scope_note": "Counts when the team itself fabricates liquidity through human, non-scalable matchmaking for early deals; distinct from co-opting third-party brokers (r13)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "Geographic density focus",
+          "idea": "Abandon three-cluster spread and concentrate all supply and demand into a single city until match rates within that radius cross a usefulness threshold.",
+          "scope_note": "Any narrowing along geography/radius to manufacture local critical mass; not category narrowing (r5)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "Vertical wedge narrowing",
+          "idea": "Serve only one product category (e.g. pharma cold-chain) so listings, compliance, and trust expectations are homogeneous and a thin market still clears.",
+          "scope_note": "Maps when the lever is restricting to one use-case/vertical/segment to deepen a thin market; distinct from geographic focus (r4)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "One-side subsidy",
+          "idea": "Use limited capital to discount, rebate, or pay listing/booking incentives to whichever side is harder to attract, improving its acquisition economics.",
+          "scope_note": "Direct price incentives/subsidies/credits to pull one side onto the platform; not the platform taking inventory risk (r7) or guaranteeing outcomes (r14)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "Guaranteed capacity backstop",
+          "idea": "Pre-purchase or reserve blocks of capacity from operators (taking inventory risk without owning facilities) so a buyer searching always sees guaranteed, bookable availability.",
+          "scope_note": "Counts when the platform itself underwrites supply availability by committing to buy/reserve inventory; distinct from simply subsidizing (r6) and from owning physical assets, which is barred."
+        },
+        {
+          "id": "r8",
+          "mechanism": "Anchor demand contract",
+          "idea": "Sign one large recurring buyer (e.g. a national food brand) whose committed volume keeps a base of operators busy and worth showing up for.",
+          "scope_note": "A single big committed demand source that alone justifies supply staying active; distinct from pooling many small buyers (r12)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "Supply exclusivity lock",
+          "idea": "Secure exclusive-listing agreements with the best operators so their available capacity appears only on the platform, concentrating fragmented supply.",
+          "scope_note": "Maps to exclusivity, must-list, or rights deals that aggregate otherwise scattered supply; not generic incentives (r6)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "Workflow embedding",
+          "idea": "Integrate booking directly into the ERP, logistics, or order systems SMEs already run, so storage gets reserved inside an existing process rather than on a destination site.",
+          "scope_note": "Counts when liquidity is created by embedding the transaction into an incumbent system/workflow/API the user already lives in."
+        },
+        {
+          "id": "r11",
+          "mechanism": "Trust and escrow layer",
+          "idea": "Add verification badges, ratings, standardized SLAs, and payment escrow so a buyer dares to commit to an unknown operator for the first time.",
+          "scope_note": "Mechanisms that remove counterparty-trust friction via reputation/verification/escrow; distinct from guaranteeing the transaction financially (r14) and from reducing booking steps (r15)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "Demand aggregation pre-commit",
+          "idea": "Collect and pool many SMEs' committed storage needs ahead of time, then go source/guarantee supply against that aggregated demand (reverse-marketplace).",
+          "scope_note": "Counts when many buyers' demand is batched/pre-committed first and supply is sourced to fill it; distinct from a single anchor buyer (r8)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "Offline network co-option",
+          "idea": "Recruit the existing phone brokers and cold-chain industry associations who already aggregate both sides, onboarding their books rather than fighting them.",
+          "scope_note": "Maps when the lever is enlisting pre-existing offline aggregators/communities/associations to import liquidity; distinct from in-house concierge (r3)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "Transaction-risk underwriting",
+          "idea": "Offer a money-back/spoilage guarantee or insurance on the first bookings so a buyer's downside on a bad match is capped, lowering the bar to transact.",
+          "scope_note": "Platform absorbs outcome risk via guarantees/insurance/SLA penalties; distinct from trust signals (r11) and from capacity backstop (r7)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "Standardized instant booking",
+          "idea": "Replace negotiated quotes with standardized units, transparent fixed pricing, and one-tap instant confirmation to slash the activation energy of a first transaction.",
+          "scope_note": "Counts when the move reduces friction/time-to-first-transaction via standardization, instant confirmation, or simplified contracting; not trust/escrow (r11)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "Urgent-spot wedge",
+          "idea": "Target only time-critical overflow demand (a sudden surplus or a chiller breakdown) where brokers are too slow, so the platform wins precisely where alternatives fail.",
+          "scope_note": "Maps when the wedge is an acute, time-sensitive, or emergency need segment that incumbents serve poorly; distinct from general vertical narrowing (r5)."
+        }
+      ]
+    },
+    {
+      "id": "developer-api-freemium-monetization",
+      "title": "Usage-Based Developer API That Can't Convert Its Free Tier",
+      "domain": "b2b-saas",
+      "archetype": "monetization-pricing",
+      "context": "A US-based, bottoms-up developer-tools company offers a cloud API that turns messy documents into structured data; individual developers adopt it self-serve with no procurement, and a very generous free tier has driven adoption to hundreds of thousands of accounts. Infrastructure cost scales roughly linearly with API calls, and free usage accounts for the large majority of total traffic.",
+      "prompt": "The product has strong organic growth and is widely embedded in real applications, but paid conversion sits well under one percent and revenue badly lags usage. Worse, the cost of serving free traffic climbs every month and is dragging gross margin toward zero. The free tier is the company's primary distribution channel and direct competitors also give access away, so removing it outright is not an option. Adoption is entirely bottoms-up and self-serve, with no enterprise sales motion in place today, and the current single flat paid plan converts almost nobody. Leadership will not take steps that would visibly betray developer goodwill or ignite a community backlash. Propose ways to turn this large, sticky usage base into durable revenue while keeping the free-driven growth engine intact.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "Usage-based metering",
+          "idea": "Meter the core value metric (documents/calls processed) and charge pay-as-you-go above a free allowance, so the heaviest users pay in proportion to consumption.",
+          "scope_note": "Counts when the lever is linear/consumption pricing on the PRIMARY value unit beyond a free quota; distinct from gating secondary axes (r3) and from changing which unit is billed (r6)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "Feature tiering",
+          "idea": "Reserve advanced capabilities (higher accuracy models, batch mode, custom schemas, webhooks) for paid plans while basic extraction stays free.",
+          "scope_note": "Capability/good-better-best gating of product features; distinct from governance/security gating aimed at orgs (r5)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "Secondary-axis gating",
+          "idea": "Monetize cheap-to-promise, expensive-to-serve dimensions such as data retention window, request rate, concurrency, or history depth, charging to lift those ceilings.",
+          "scope_note": "Maps when paid unlocks non-primary consumption axes (retention/throughput/concurrency/SLA-of-speed); distinct from metering the core value metric (r1)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "Collaboration seat gating",
+          "idea": "Keep solo developer use free but charge when usage becomes a team or organization (shared projects, member management, role assignment).",
+          "scope_note": "Monetizes multi-user/team collaboration or seats; distinct from enterprise security/governance (r5)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "Enterprise governance gating",
+          "idea": "Package SSO, audit logs, RBAC, contractual SLAs, and compliance certifications as paid capabilities that IT and security buyers require.",
+          "scope_note": "Counts for admin/security/compliance/SLA gating targeted at organizational buyers; distinct from general feature tiering (r2) and seats (r4)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "Value-metric repricing",
+          "idea": "Stop billing on raw API calls and reprice onto a unit that tracks value captured (e.g. successfully extracted fields, or outcomes), aligning price with worth.",
+          "scope_note": "Maps when the central move is changing WHICH unit is charged for to better correlate with value; not merely metering an existing unit (r1)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "Committed-use credits",
+          "idea": "Offer prepaid credit packs and committed-use/annual discounts that pull revenue forward and convert sporadic spenders into committed accounts.",
+          "scope_note": "Prepay, credits, commit-for-discount, or reserved-capacity pricing structures; distinct from the base-fee-plus-overage structure (r8)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "Hybrid base-plus-usage",
+          "idea": "Introduce a recurring platform/subscription fee that includes a usage bucket, with metered overage beyond it (two-part tariff).",
+          "scope_note": "Counts for two-part pricing combining a fixed recurring fee with usage overage; distinct from pure pay-as-you-go (r1) and from prepaid credits (r7)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "Free-tier recalibration",
+          "idea": "Lower the free allowance to a genuine hobbyist/evaluation envelope (grandfathering existing users) so commercial-scale use must move to a paid plan.",
+          "scope_note": "Maps when the lever is shrinking the generosity of the free threshold itself; distinct from adding new gated axes (r3) or charging on consumption (r1)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "PLG sales overlay",
+          "idea": "Use usage signals to flag high-consumption free accounts inside real companies and add a light sales-assist motion to convert and expand them.",
+          "scope_note": "Counts when the move adds a sales/CS-assisted expansion motion triggered by product-usage signals; distinct from any pricing-structure change."
+        },
+        {
+          "id": "r11",
+          "mechanism": "Commercial-use licensing",
+          "idea": "Keep usage free for non-commercial, personal, or below-a-revenue-threshold use, and require a paid commercial license above it (open-core/source-available style).",
+          "scope_note": "Maps to license-terms-based monetization keyed to commercial use or company size/revenue; distinct from metered or tiered pricing of the hosted service."
+        },
+        {
+          "id": "r12",
+          "mechanism": "Managed-service monetization",
+          "idea": "Open-source or free the core engine for self-hosting while charging for the fully managed, hosted, scaled cloud offering that most users prefer.",
+          "scope_note": "Counts when free self-host is traded against a paid managed/hosted version (open-core hosting); distinct from commercial-use licensing of the same hosted product (r11)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "Ecosystem take rate",
+          "idea": "Build a marketplace of third-party connectors, templates, and integrations and take a cut, monetizing the ecosystem rather than only the core API.",
+          "scope_note": "Maps when revenue comes from a take-rate on add-ons/partners/marketplace; distinct from charging end-users for core usage."
+        },
+        {
+          "id": "r14",
+          "mechanism": "Cost-to-serve reduction",
+          "idea": "Repair unit economics on free traffic via aggressive caching, cheaper inference tiers, deduplication, or bring-your-own-compute so the free base stops bleeding margin.",
+          "scope_note": "Counts when the lever attacks COGS/cost-to-serve of free users rather than extracting revenue; the only margin-side reference."
+        },
+        {
+          "id": "r15",
+          "mechanism": "Trust-safe indirect revenue",
+          "idea": "Earn revenue from parties OTHER than the developer without compromising user trust, e.g. an opt-in paid marketplace for third-party add-ons/integrations, or charging commercial downstream consumers of the public outputs \u2014 never selling user data.",
+          "scope_note": "Maps when revenue comes from a third party via transparent, opt-in, goodwill-preserving means (add-on marketplace, certified-partner fees, downstream commercial licensing); explicitly EXCLUDES selling user/usage data or covert ads, which violate the case constraint. Distinct from any user-pays mechanism."
+        },
+        {
+          "id": "r16",
+          "mechanism": "Adjacent cross-sell",
+          "idea": "Use the free API as the wedge to cross-sell a separate paid product (e.g. a workflow/automation or storage layer) where willingness-to-pay is higher.",
+          "scope_note": "Counts when monetization shifts to an adjacent/complementary product bundled or cross-sold off the free base; not repricing the core API itself."
+        }
+      ]
+    },
+    {
+      "id": "naira-microinsurance-trust-deficit",
+      "title": "The Micro-Insurance Nobody Believes Will Pay",
+      "domain": "fintech",
+      "archetype": "trust-compliance",
+      "context": "A licensed digital micro-insurance underwriter in Nigeria sells low-premium health and crop cover through a smartphone app and USSD shortcodes, collecting premiums via mobile money and bank transfer amid persistent double-digit naira inflation. Its target market is informal-sector workers and smallholder farmers, most of whom have only ever encountered insurance as something that takes premiums and refuses to pay claims.",
+      "prompt": "The firm is supervised by the national insurance regulator and writes genuinely valid, actuarially sound cover, yet paying take-up is near zero and the few who buy lapse within weeks. Prospective customers assume any claim will be denied, that the company will vanish with their money, or that the offer is an outright scam, and a single rumored denial travels fast through tight informal networks. The regulatory capital rules, the licensed product structure, and the underlying pricing cannot be changed, and you cannot give the cover away free or run a sustained loss. Premiums are tiny, so per-customer acquisition and servicing budgets are minimal, and a large share of users transact on basic phones over USSD with patchy connectivity and no reliable email. The naira steadily loses real value, making customers reluctant to part with cash today for an intangible future promise. The brand has no incumbent reputation to lean on. Your goal is to grow the base of paying, retained policyholders.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "instant visible payout",
+          "idea": "Settle claims automatically and near-instantly via parametric/index triggers (e.g., rainfall-indexed crop payout, hospital cash on admission) so the payment is observed fast.",
+          "scope_note": "Maps any idea whose core is making the payout fast, automatic, or objectively trigger-based to prove the product actually pays; includes parametric, index-based, and instant-disbursement designs. Distinct from process transparency (r11) and one-off demo payouts (r12)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "public payout proof",
+          "idea": "Publicize real settled claims through testimonials, local 'we paid X' events, and visible payout tallies to create social evidence the firm honors claims.",
+          "scope_note": "Maps marketing/communicating ACTUAL past payouts as proof, including community payout ceremonies and claimant testimonials. Distinct from incentivized referral (r15) and from the speed of payment itself (r1)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "trusted-agent distribution",
+          "idea": "Sell and service through cooperatives, faith institutions, savings groups, and respected local agents who already hold the customer's trust.",
+          "scope_note": "Maps routing distribution/servicing through pre-trusted community institutions or individuals. Distinct from corporate co-branding (r14) and from agents bearing personal liability (r13)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "custodial fund guarantee",
+          "idea": "Hold reserves and premiums in visible third-party escrow or a ring-fenced trust so customers can see the firm cannot abscond with their money.",
+          "scope_note": "Maps any 'funds are safely held elsewhere and can't disappear' structure: escrow, trust, segregated bank custody. Distinct from leveraging regulatory status (r5)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "regulator-backed signaling",
+          "idea": "Prominently surface the license, supervisory oversight, and any industry guarantee or policyholder-compensation fund as a credibility signal.",
+          "scope_note": "Maps using official regulatory status/oversight or an industry guarantee fund to signal credibility. Distinct from a privately arranged custodial escrow (r4)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "group mutual pooling",
+          "idea": "Underwrite whole groups as a mutual or takaful in which members share the risk pool and collectively police claims.",
+          "scope_note": "Maps collective ownership/mutualization, takaful, or community-pool models where the group holds a shared stake. Distinct from merely distributing via a group (r3) and from individual referral (r15)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "premium-return guarantee",
+          "idea": "Offer no-claim premium refunds, cash-back, or a no-claim bonus so customers don't feel they 'wasted' money when nothing goes wrong.",
+          "scope_note": "Maps any return-of-premium, money-back, or no-claim-bonus mechanic that reduces perceived loss. Distinct from flexible pay-as-you-go pricing (r10)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "embedded at transaction",
+          "idea": "Bundle the cover into a purchase the customer already makes \u2014 seed and fertilizer, a microloan, a clinic visit, or airtime top-up.",
+          "scope_note": "Maps attaching insurance to an existing transaction or point of risk so it is acquired passively. Distinct from third-party brand co-marketing (r14)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "inflation-indexed benefit",
+          "idea": "Denominate the benefit in real units (bags of grain, a fixed goods basket, hard-currency or gold link) so the payout holds value despite the naira.",
+          "scope_note": "Maps protecting the benefit's real value against currency erosion via indexing or in-kind settlement. Distinct from premium-return mechanics (r7)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "pay-as-you-go micropayments",
+          "idea": "Let customers pay tiny, flexible, frequent premiums (daily/weekly top-ups) instead of an upfront lump sum.",
+          "scope_note": "Maps micro, flexible, or installment premium collection that lowers the commitment hurdle. Distinct from returning premiums later (r7)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "radical claims transparency",
+          "idea": "Publish simple, objective claim criteria and live claim-status tracking with no hidden fine print.",
+          "scope_note": "Maps making the claims PROCESS clear, simple, and predictable upfront. Distinct from the speed/automation of payout (r1) and from an external complaints body (r17)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "demonstration trial payout",
+          "idea": "Let prospects experience a real small payout or a free-look first claim before committing, so they prove the product to themselves before buying.",
+          "scope_note": "Maps any try-before-trust, sample-payout, or guaranteed-first-claim mechanic experienced by the prospect personally. Distinct from publicizing others' claims (r2)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "agent reputation bonding",
+          "idea": "Make local agents personally accountable \u2014 they vouch, co-sign, or carry reputational and financial stake in claims being honored.",
+          "scope_note": "Maps aligning agent incentives or liability with honest fulfillment. Distinct from simply using trusted agents to sell (r3)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "co-brand trust transfer",
+          "idea": "Borrow credibility by co-branding or partnering with a trusted telco, bank, or well-known consumer brand.",
+          "scope_note": "Maps trust transfer from an established corporate partner's brand. Distinct from community-institution distribution (r3) and from embedding in a transaction (r8)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "referral network incentive",
+          "idea": "Reward existing policyholders for referring others, deliberately harnessing tight informal social networks.",
+          "scope_note": "Maps incentivized peer referral and word-of-mouth mechanics. Distinct from publicizing payouts as proof (r2)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "insurance-literacy education",
+          "idea": "Teach how pooled insurance actually works to correct the 'they just take your money' misconception.",
+          "scope_note": "Maps educational or explanatory campaigns that build product understanding. Distinct from proof-of-payment tactics (r1, r2, r12)."
+        },
+        {
+          "id": "r17",
+          "mechanism": "independent dispute recourse",
+          "idea": "Provide a fast, independent grievance or ombudsman channel so a denied claim has visible, credible recourse.",
+          "scope_note": "Maps external or independent complaint resolution that reduces fear of arbitrary denial. Distinct from internal claims-process transparency (r11)."
+        }
+      ]
+    },
+    {
+      "id": "egov-app-low-uptake",
+      "title": "The E-Gov App Citizens Won't Open",
+      "domain": "public-sector",
+      "archetype": "adoption-diffusion",
+      "context": "A national government in a mid-sized European country has launched a free unified app and web portal consolidating dozens of public services \u2014 tax, benefits, permits, health appointments, vehicle registration \u2014 to move citizens off in-person offices and paper forms. The service is mandatory for the state to offer but voluntary for citizens to use, statutory identity-assurance and data-protection rules are strict, and physical offices and call centres remain fully open.",
+      "prompt": "Years after launch the app is barely used; most citizens still queue at counters, post paper forms, or phone helplines for tasks the app completes in minutes, and the parallel channels are expensive to keep running. Of those who do download it, many stall at the first account or identity-verification step and never come back. The service is genuinely free and works well, yet a large share of the population \u2014 older residents, rural users, non-native speakers, and the digitally hesitant \u2014 never hears about it, assumes it is not meant for them, or gives up at the first obstacle. You cannot make digital use compulsory, cannot shut the in-person and phone channels by decree, and cannot weaken the statutory identity-assurance or data-protection requirements. Budgets are fixed and there is no funding for sustained national paid advertising. Your goal is to move a durable majority of routine transactions onto the digital channel.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "onboarding friction removal",
+          "idea": "Cut steps, dead-ends, and complexity in the registration and verification flow so first-time users actually get through.",
+          "scope_note": "Maps reducing or streamlining the signup/verification funnel itself. Distinct from reusing an existing credential (r2) and from letting users act before full verification (r14)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "shared identity reuse",
+          "idea": "Let citizens authenticate once with an existing national eID or bank-ID and reuse that credential across every service.",
+          "scope_note": "Maps single sign-on, reusable credentials, or federated identity that removes a separate signup. Distinct from generally simplifying the signup screens (r1)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "assisted-onboarding intermediaries",
+          "idea": "Deploy human helpers \u2014 libraries, post offices, community organizations, NGOs, and family \u2014 to register and coach hesitant users.",
+          "scope_note": "Maps third-party or community assisted digital enrollment. Distinct from diverting users at a government service counter (r4) and from default auto-provisioning (r5)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "point-of-service redirection",
+          "idea": "At counters and call centres, actively convert the in-person or phone transaction into an app transaction during that same contact.",
+          "scope_note": "Maps channel-shifting at the moment of an existing in-person/phone interaction. Distinct from community-helper enrollment (r3) and from giving digital faster turnaround (r16)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "default account provisioning",
+          "idea": "Auto-create accounts for citizens on an opt-out basis so the account already exists when they need it.",
+          "scope_note": "Maps pre-provisioned or default-created accounts. Distinct from life-event-triggered outreach (r6)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "life-event triggering",
+          "idea": "Reach citizens with the relevant service exactly at a triggering life event \u2014 birth, moving home, job loss, licence renewal.",
+          "scope_note": "Maps event-timed outreach that creates a concrete reason to adopt now. Distinct from recurring habit notifications (r11)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "trusted-messenger advocacy",
+          "idea": "Recruit trusted local figures \u2014 doctors, faith leaders, community groups \u2014 to endorse and promote the service.",
+          "scope_note": "Maps credibility-borrowing endorsements by trusted intermediaries. Distinct from peer-to-peer referral (r8) and from staffed enrollment help (r3)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "social referral spread",
+          "idea": "Enable and prompt users to onboard relatives and neighbours through manage-on-behalf, sharing, and invites.",
+          "scope_note": "Maps peer-to-peer and word-of-mouth diffusion mechanics among ordinary users. Distinct from authority/messenger endorsement (r7)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "proactive pre-filled value",
+          "idea": "Make the app DO things for citizens \u2014 pre-filled forms, automatic reminders, proactively surfaced entitlements \u2014 so it pulls demand.",
+          "scope_note": "Maps shifting from a passive form-portal to a proactive service that delivers value unasked. Distinct from merely communicating convenience (r12)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "inclusive-design accessibility",
+          "idea": "Build low-literacy, multilingual, voice, low-bandwidth, and accessibility-compliant versions for currently excluded groups.",
+          "scope_note": "Maps redesigning the product for accessibility and inclusion of older, rural, non-native, or disabled users. Distinct from human assistance (r3)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "recurring-engagement hooks",
+          "idea": "Give people repeated reasons and reminders to open the app via notifications, status updates, and recurring tasks.",
+          "scope_note": "Maps habit-forming, retention, and re-engagement nudges. Distinct from one-time life-event triggers (r6)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "salient convenience framing",
+          "idea": "Make the time and effort saving vivid at the point of choice, e.g., showing the queue/wait versus minutes in-app.",
+          "scope_note": "Maps communication and framing that surfaces the convenience advantage. Distinct from actually giving digital faster service (r16) and from building proactive features (r9)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "third-party channel embedding",
+          "idea": "Expose the services via APIs inside apps citizens already use \u2014 banks, private platforms \u2014 rather than forcing them into a new government app.",
+          "scope_note": "Maps meeting users in existing private channels through an open/embedded ecosystem. Distinct from redirecting at a government counter (r4)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "progressive verification tiers",
+          "idea": "Let users do something useful immediately at a low assurance tier, stepping up identity checks only when a task requires it.",
+          "scope_note": "Maps tiered or progressive trust so value precedes full ID verification. Distinct from generally simplifying signup (r1)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "high-propensity seeding",
+          "idea": "Concentrate first on the most receptive segments or regions to build a visible critical mass and social norm before broadening.",
+          "scope_note": "Maps targeted early-adopter, segment, or geographic seeding to create diffusion momentum. Distinct from individual referral mechanics (r8)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "digital-channel preferencing",
+          "idea": "Give the digital channel materially better service \u2014 faster turnaround, priority handling, or features unavailable on paper.",
+          "scope_note": "Maps making digital objectively preferable through a service-level advantage. Distinct from merely framing convenience (r12) and from counter redirection (r4)."
+        },
+        {
+          "id": "r17",
+          "mechanism": "privacy reassurance",
+          "idea": "Address data-protection and surveillance fears with clear, trustworthy data-handling communication and user controls.",
+          "scope_note": "Maps overcoming privacy or trust hesitancy about government data use. Distinct from general accessibility design (r10)."
+        }
+      ]
+    },
+    {
+      "id": "molding-plant-throughput-cap",
+      "title": "Maxed-Out Injection Molding Plant",
+      "domain": "manufacturing",
+      "archetype": "process-throughput",
+      "context": "A contract injection-molding manufacturer near Puebla, Mexico runs twelve presses across two shifts, producing OEM-approved plastic interior trim under fixed multi-year supply contracts with three automakers. The plant is selling 100% of what it can physically produce while qualified new orders keep arriving.",
+      "prompt": "The committed order book already exceeds what the plant can ship by roughly 25%, and that gap is widening as the automaker customers ramp their own production. For the next eighteen months the parent group has frozen capital expenditure, the building is at its footprint limit with no room to extend the floor, and the OEM-approved part geometries and material grades cannot be altered without a full requalification the customers refuse to fund. The collective labor agreement caps total headcount and fixes shift premiums, so simply hiring a third crew at premium rates is off the table. On-time delivery and the contractual quality/PPAP requirements must be held; missing either triggers penalties that erase any throughput gain. Leadership wants to ship materially more sellable product out of the existing asset base inside these limits. Where should they look, and what concretely should they do?",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "constraint subordination",
+          "idea": "Identify the single gating process stage and schedule the entire plant to keep it continuously fed and never idle, sequencing all other operations around it.",
+          "scope_note": "Any answer about locating the limiting stage and subordinating/finite-scheduling the rest of the plant to it (drum-buffer-rope, throughput-accounting prioritization at the constraint); not the specific loss-reduction levers below."
+        },
+        {
+          "id": "r2",
+          "mechanism": "changeover reduction",
+          "idea": "Cut mold/die changeover time with quick-die-exchange, externalized setup, and standardized tooling so the constraint spends more time running.",
+          "scope_note": "SMED, single-minute die exchange, setup standardization, and grouping like-tooling jobs to reduce the number/duration of changeovers."
+        },
+        {
+          "id": "r3",
+          "mechanism": "uptime reliability",
+          "idea": "Raise availability of the constraint presses through preventive/predictive maintenance and faster breakdown response to eliminate unplanned downtime.",
+          "scope_note": "Maintenance programs, condition monitoring, critical-spares strategy, and MTTR reduction focused on the bottleneck; availability losses, not setup or cycle speed."
+        },
+        {
+          "id": "r4",
+          "mechanism": "cycle-time tuning",
+          "idea": "Run the constraint faster within spec by optimizing process parameters such as cooling time and injection profile via designed experiments.",
+          "scope_note": "Speeding the machine cycle, parameter optimization/DOE, and eliminating micro-stops or slow-cycle losses (OEE performance), staying inside approved specs."
+        },
+        {
+          "id": "r5",
+          "mechanism": "quality at constraint",
+          "idea": "Eliminate scrap and rework at and upstream of the constraint so its hours are never consumed making defective parts.",
+          "scope_note": "First-pass yield, in-line inspection that stops bad parts before the bottleneck, and cutting rework loops; quality losses specifically as wasted constraint time."
+        },
+        {
+          "id": "r6",
+          "mechanism": "output per cycle",
+          "idea": "Increase good parts produced per machine shot via higher-cavitation or redesigned molds that fit existing presses.",
+          "scope_note": "More parts per cycle through tooling/mold cavitation or yield-per-shot redesign, distinct from running the existing tool faster (r4)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "internal rerouting",
+          "idea": "Move eligible parts onto underutilized non-bottleneck presses or alternate internal process routes to balance load away from the constraint.",
+          "scope_note": "Load-balancing across machines, qualifying a second press for a part, routing whole SKUs off the constraint; internal capacity only."
+        },
+        {
+          "id": "r8",
+          "mechanism": "outsource overflow",
+          "idea": "Subcontract peak or low-value volume to external molders to free internal constraint capacity for the most valuable work.",
+          "scope_note": "External/toll molding of overflow, make-vs-buy for specific SKUs, using outside capacity to absorb demand."
+        },
+        {
+          "id": "r9",
+          "mechanism": "mix prioritization",
+          "idea": "Allocate scarce constraint hours to products with the highest throughput per constraint-hour and reprice or shed the worst offenders.",
+          "scope_note": "Throughput-per-bottleneck-hour ranking, product-mix optimization, dropping/renegotiating low-value SKUs; demand-allocation, not capacity creation."
+        },
+        {
+          "id": "r10",
+          "mechanism": "pre-constraint buffer",
+          "idea": "Hold a protective WIP/time buffer immediately before the constraint so upstream variability can never starve it.",
+          "scope_note": "Strategic decoupling inventory or time buffer positioned ahead of the bottleneck to protect throughput; not finished-goods or demand buffering."
+        },
+        {
+          "id": "r11",
+          "mechanism": "no-idle relief",
+          "idea": "Keep the constraint running through breaks, lunches, and shift handovers using relief operators or staggered breaks within the existing crew.",
+          "scope_note": "Hot-seat changeovers, break/lunch relief, eliminating handover idle on the constraint by reallocating current labor within the headcount cap."
+        },
+        {
+          "id": "r12",
+          "mechanism": "handling automation",
+          "idea": "Automate load/unload, ejection, and material feed at the constraint to remove operator-paced delays each cycle.",
+          "scope_note": "Robots, auto-eject, conveyors, or feed automation at the bottleneck that shortens non-value handling time per cycle without adding headcount."
+        },
+        {
+          "id": "r13",
+          "mechanism": "demand smoothing",
+          "idea": "Flatten order arrival against fixed capacity using scheduling agreements, build-ahead, and lead-time commitments with customers.",
+          "scope_note": "Order leveling, available-to-promise discipline, collaborative forecasting and build-ahead to smooth peaks; managing inflow rather than output."
+        },
+        {
+          "id": "r14",
+          "mechanism": "asset debottleneck",
+          "idea": "Make a low-cost retrofit to the existing constraint press\u2014added cooling, an accumulator, faster auxiliaries\u2014that lifts its rate without a new line.",
+          "scope_note": "Minor physical upgrades raising the existing machine's ceiling; distinct from buying a press (barred), parameter tuning (r4), and tooling changes (r6)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "unattended running",
+          "idea": "Run the constraint lights-out during nights or weekends with remote monitoring to add operating hours without added labor.",
+          "scope_note": "Extending the constraint's running hours via automation/remote monitoring rather than hiring or paying shift premiums; distinct from in-shift relief (r11)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "work-content offload",
+          "idea": "Move sub-operations currently done at the constraint (trimming, inserts, finishing) onto adjacent non-constraint stations so the bottleneck does less per part.",
+          "scope_note": "Rebalancing work content off the constraint onto other stations; distinct from rerouting whole parts elsewhere (r7)."
+        }
+      ]
+    },
+    {
+      "id": "last-mile-failed-deliveries-bengaluru",
+      "title": "Failed Last-Mile Deliveries at Scale",
+      "domain": "logistics",
+      "archetype": "waste-efficiency",
+      "context": "A third-party last-mile parcel carrier in Bengaluru, India delivers more than 80,000 e-commerce parcels a day across dense residential blocks and gated communities, a large share cash-on-delivery, using a high-churn gig fleet of two-wheeler riders. It is paid a fixed fee per delivered parcel by its e-commerce clients.",
+      "prompt": "A large fraction of stops fail on the first attempt and must be re-attempted one or more times, inflating cost per parcel, blowing through delivery-promise dates, and driving complaints from both merchants and end customers. The per-parcel rates paid by the e-commerce clients are locked for the year and cannot be renegotiated, and the carrier cannot require those merchants to change anything in their own checkout or app flows. The rider fleet is gig-based and churns fast, the vehicle type is fixed to two-wheelers by the city's roads and parking, and warehouse and sortation capacity are fixed. The published delivery-promise dates shown to customers cannot be loosened. Management wants to sharply reduce the volume and cost of failed and repeated delivery attempts inside all of these constraints. What concrete moves are available to them?",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "delivery time-windows",
+          "idea": "Deliver within a recipient-chosen or predicted time window so someone is present to receive.",
+          "scope_note": "Slotted/appointment delivery, narrow windows, or timing attempts to recipient availability; the demand-side commitment, distinct from the routing engine that honors it (r9)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "pre-arrival notification",
+          "idea": "Send a live ETA and arrival alert ahead of the stop so the recipient is ready when the rider reaches the door.",
+          "scope_note": "SMS/app ETA, 'rider arriving' alerts, and readiness confirmation sent before the rider arrives; not the at-door call (r13)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "address quality",
+          "idea": "Validate, correct, and precisely geocode addresses before dispatch to cut not-found and wrong-location failures.",
+          "scope_note": "Address verification, GPS-pin capture, landmark/locality correction, and deduping bad addresses upstream of the rider."
+        },
+        {
+          "id": "r4",
+          "mechanism": "out-of-home pickup",
+          "idea": "Divert hard-to-reach parcels to lockers, partner kirana stores, or pickup points instead of attempting the home.",
+          "scope_note": "PUDO networks, parcel lockers, neighborhood-store pickup as fallback or opt-in default; out-of-home receipt."
+        },
+        {
+          "id": "r5",
+          "mechanism": "authorized safe-drop",
+          "idea": "Leave the parcel in a recipient-authorized safe location with photo proof, with no face-to-face handoff required.",
+          "scope_note": "Leave-at-door / authority-to-leave with proof-of-delivery photo for non-COD parcels; unattended drop the recipient pre-authorized."
+        },
+        {
+          "id": "r6",
+          "mechanism": "proxy receiver",
+          "idea": "Hand the parcel to a neighbor, security guard, building reception, or other designated alternate recipient.",
+          "scope_note": "Gatekeeper/guard handoff, neighbor delivery, building-desk receipt, or a named alternate accepting on the recipient's behalf."
+        },
+        {
+          "id": "r7",
+          "mechanism": "COD digitization",
+          "idea": "Convert cash-on-delivery to digital prepay or at-door QR/UPI payment to remove cash-not-ready and exact-change failures.",
+          "scope_note": "Carrier-side prepay nudges, doorstep QR/UPI, and reducing COD share to eliminate payment-driven failed attempts."
+        },
+        {
+          "id": "r8",
+          "mechanism": "self-service redirect",
+          "idea": "Let recipients reschedule, redirect, or hold a parcel before the attempt via a link, avoiding a wasted trip entirely.",
+          "scope_note": "Pre-attempt customer control to change date/address/location or hold at hub; preventing the doomed trip before it happens."
+        },
+        {
+          "id": "r9",
+          "mechanism": "availability routing",
+          "idea": "Sequence routes using availability and preference signals so stops are visited when receipt is most likely, e.g. working households in the evening.",
+          "scope_note": "Route optimization conditioned on time-windows/availability and clustering by readiness; the supply-side sequencing engine, distinct from offering windows (r1)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "rider incentives",
+          "idea": "Pay and score riders on successful first-attempt delivery rather than raw attempt count to curb premature 'not home' marks.",
+          "scope_note": "Incentive/penalty restructuring, success-rate scoring, and accountability for false fails; aligning gig-rider effort."
+        },
+        {
+          "id": "r11",
+          "mechanism": "failure prediction",
+          "idea": "Score stops for failure risk from history, geography, and COD status, then apply pre-emptive interventions only where needed.",
+          "scope_note": "ML/heuristic risk targeting that triggers a call, prepay push, or relocation selectively on high-risk parcels; the targeting layer, not a fix itself."
+        },
+        {
+          "id": "r12",
+          "mechanism": "gated-access solutions",
+          "idea": "Solve physical entry to gated societies and apartments via gate codes, RWA/society agreements, and pre-cleared guard entry lists.",
+          "scope_note": "Access credentials, building/society partnerships, intercom or guard pre-authorization to get the rider inside."
+        },
+        {
+          "id": "r13",
+          "mechanism": "at-door contact protocol",
+          "idea": "Require the rider to call or message the recipient on arrival before any stop can be marked failed.",
+          "scope_note": "Mandatory two-way contact at the door to prevent premature/fake failures; the contact happens at arrival, distinct from pre-trip ETA (r2)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "parcel consolidation",
+          "idea": "Bundle multiple parcels for the same recipient, household, or building into a single trip and handoff.",
+          "scope_note": "Batching shipments to one address or one building per visit to cut repeat trips; consolidation of deliveries."
+        },
+        {
+          "id": "r15",
+          "mechanism": "carrier-side preferences",
+          "idea": "Collect delivery instructions, alternate phone numbers, and drop preferences directly from recipients via the carrier's own first contact, independent of merchant checkout.",
+          "scope_note": "Enriching delivery data post-handoff through the carrier's channel/app since merchant checkout is fixed; building reusable recipient preference profiles."
+        },
+        {
+          "id": "r16",
+          "mechanism": "smart retry triage",
+          "idea": "When a first attempt fails, triage and batch the retry intelligently\u2014next-day clustering, switch to a pickup point, or hold at hub\u2014rather than blindly re-running the same route.",
+          "scope_note": "Making the unavoidable retries cheaper via retry routing and channel-switching; distinct from preventing the first failure."
+        }
+      ]
+    },
+    {
+      "id": "first-gift-donor-lapse-uk",
+      "title": "The One-and-Done Donor",
+      "domain": "nonprofit",
+      "archetype": "churn-retention",
+      "context": "A mid-sized UK-registered animal-welfare charity raising about GBP 4M a year, regulated by the Fundraising Regulator and the Charity Commission, with most income arriving as individual cash gifts under GBP 50 from emergency appeals and online advertising, and Gift Aid reclaimed via HMRC.",
+      "prompt": "The charity recruits tens of thousands of first-time donors every year, but the overwhelming majority never give a second time: second-year retention of newly acquired cash donors sits in the low teens of a percent, far below its long-standing committed-giving cohorts. The fully loaded cost of acquiring a new donor has climbed and now exceeds the value of the typical single gift, so on a unit basis the charity loses money on each new supporter unless that person gives again. It cannot increase total fundraising spend or add fundraising and marketing headcount, and it cannot lift the average ask amount without measurably depressing response rates. It must operate inside Fundraising Regulator rules that cap contact frequency and require explicit, channel-specific consent, and inside UK GDPR, which forbids buying third-party contact lists and mandates opt-in for email and SMS. The board will not approve anything that jeopardises the charity's accreditation or public-trust standing, and brand rules forbid any messaging that misrepresents how money is used. Propose the broadest possible set of structurally distinct approaches to fix these economics.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "Onboarding journey",
+          "idea": "Build a structured early-relationship sequence triggered by the first gift that orients and nurtures the donor before any further ask is made.",
+          "scope_note": "Any planned multi-touch welcome/nurture programme for new donors (welcome series, first-90-days journey, relationship-building before second solicitation); not a single thank-you (r5) and not purely a fast resolicitation (r3)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "Recurring conversion",
+          "idea": "Convert one-off cash givers into regular committed donors via standing order or Direct Debit so giving becomes automatic rather than re-decided.",
+          "scope_note": "Any move to shift payment cadence to recurring/monthly/regular-giving or membership-dues style commitments; about changing the giving frequency mechanism, distinct from making a single repeat ask (r3) or easier checkout (r10)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "Rapid second ask",
+          "idea": "Solicit a prompt second gift while the donor is still emotionally engaged, treating speed and timing of the next ask as the lever.",
+          "scope_note": "Timing-driven resolicitation (second-gift-within-X-days, strike-while-warm, fast follow-up appeal); about WHEN the next ask lands, not the onboarding content (r1) or converting to recurring (r2)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "Impact feedback",
+          "idea": "Close the loop by showing donors the concrete outcome their specific gift produced, so the giving feels consequential.",
+          "scope_note": "Reporting back results/outcomes/impact of the gift (this is what your donation did); distinct from saying thank-you (r5) and from matching messaging to the trigger cause (r8)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "Personal gratitude",
+          "idea": "Deliver a genuine, personal acknowledgement such as a thank-you call or handwritten note that raises the donor's felt appreciation.",
+          "scope_note": "Acknowledgement/thanking mechanisms (welcome calls, handwritten cards, gratitude messaging); about feeling valued, not about showing outcomes (r4)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "Differentiated stewardship",
+          "idea": "Allocate higher-touch handling to donors predicted to be higher value or higher affinity rather than treating all new donors identically.",
+          "scope_note": "Value/affinity-based segmentation of stewardship effort (tiered treatment, concentrate effort on best prospects); the general allocation lever, distinct from upgrade ladders (r11) and lapse-risk triggers (r17)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "Channel quality shift",
+          "idea": "Reweight acquisition toward sources and channels that historically yield better-retaining donors even at equal cost-per-acquisition.",
+          "scope_note": "Changing the donor intake mix to improve downstream retention (recruit through higher-LTV channels, drop poorly-retaining sources); a front-end acquisition-quality lever, not anything done after the gift."
+        },
+        {
+          "id": "r8",
+          "mechanism": "Motivation matching",
+          "idea": "Tailor subsequent communications to the specific cause or appeal that triggered the donor's first gift.",
+          "scope_note": "Aligning future content to the donor's original motivation/cause/appeal (rescue donors hear rescue stories); about relevance/personalisation of cause, distinct from generic impact reporting (r4)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "Community identity",
+          "idea": "Reframe the relationship around belonging and membership so the donor adopts a supporter identity rather than a transactional stance.",
+          "scope_note": "Building belonging/identity/community (supporter clubs, named membership, insider status, us-language); about affiliation, not payment cadence (r2) or a tangible product (r16)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "Friction reduction",
+          "idea": "Make repeat giving effortless via stored payment details, prefilled forms, and one-tap renewal.",
+          "scope_note": "Lowering the mechanical effort of giving again (saved cards, one-click, wallet pay, prefilled donor data); about ease of transaction, not its timing (r3) or cadence (r2)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "Upgrade ladder",
+          "idea": "Cultivate donors who show greater capacity up a giving ladder toward larger or mid-value gifts.",
+          "scope_note": "Deliberate upgrading/development of higher-capacity donors (mid-value programme, ask-string escalation, major-donor pipeline); about growing gift size over time, distinct from broad stewardship allocation (r6)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "Lapsed reactivation",
+          "idea": "Run a targeted win-back programme for donors who have already gone quiet, with reactivation-specific appeals.",
+          "scope_note": "Re-engaging already-lapsed/dormant donors (we miss you, reactivation appeals, win-back); operates after lapse, distinct from preventing lapse via risk triggers (r17)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "Occasion giving",
+          "idea": "Anchor repeat gifts to recurring personal or calendar occasions such as birthdays, anniversaries, or in-memoriam tributes.",
+          "scope_note": "Tribute/occasion/memorial giving that creates natural renewal moments; about hooking giving to dated occasions, distinct from a saleable sponsorship product (r16)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "Gift Aid capture",
+          "idea": "Maximise Gift Aid declarations on retained gifts to raise each donor's effective value without raising the ask amount.",
+          "scope_note": "Improving unit economics through HMRC Gift Aid uptake/declaration capture (claim the 25% uplift); a value-per-donor lever that respects the no-higher-ask constraint, not a retention-behaviour lever."
+        },
+        {
+          "id": "r15",
+          "mechanism": "Legacy seeding",
+          "idea": "Plant long-horizon intent such as gifts in wills to extract lifetime value from loyal supporters.",
+          "scope_note": "Legacy/bequest/gift-in-will or long-term pledge cultivation; about future-dated lifetime value, distinct from near-term recurring conversion (r2)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "Renewable product",
+          "idea": "Offer a tangible giving proposition such as sponsoring a named animal that has built-in renewal logic.",
+          "scope_note": "Designing a giving product/proposition with intrinsic recurrence (adopt-an-animal, sponsorship packs, subscription gift); the product-design lever, distinct from simply switching payment to recurring (r2) or building identity (r9)."
+        },
+        {
+          "id": "r17",
+          "mechanism": "Churn prediction",
+          "idea": "Score donors for lapse risk and fire targeted interventions before they actually drop off.",
+          "scope_note": "Predictive/at-risk modelling driving pre-emptive save actions (propensity-to-lapse triggers, early-warning intervention); risk-timing targeting, distinct from value-based stewardship (r6) and post-lapse win-back (r12)."
+        },
+        {
+          "id": "r18",
+          "mechanism": "Social proof and match",
+          "idea": "Use matched-giving campaigns and visible peer commitment to spur the second gift through social and reciprocity pressure.",
+          "scope_note": "Matched/challenge funding and social-proof mechanics (your gift doubled, donor counts, peer behaviour) to motivate the next gift; a social-incentive lever, distinct from rational impact reporting (r4)."
+        }
+      ]
+    },
+    {
+      "id": "idle-five-axis-job-shop",
+      "title": "Spindles That Sit Still",
+      "domain": "manufacturing",
+      "archetype": "capacity-utilization",
+      "context": "A privately owned precision-machining job shop in the US Midwest runs several debt-financed 5-axis CNC machines, supplying machined aerospace components under AS9100/ISO certification on competitively bid contracts.",
+      "prompt": "The shop's machines run only a single day shift and are actually cutting metal roughly 30% of available hours, sitting idle through most nights and weekends while their financing payments accrue regardless of use, so low utilization is steadily eroding margin. The work it wins comes through competitive bids, and it cannot raise prices without losing the aerospace customers that anchor its revenue. It cannot staff a full second shift of skilled machinists because the regional labor market for that skill is depleted, and it cannot take on new debt to add machines. It must preserve its AS9100/ISO certifications, full part traceability, and its on-time delivery commitments to existing customers, none of which can be compromised. Capital for major new equipment or a new facility is off the table for the foreseeable future. Propose the broadest possible set of structurally distinct approaches to lift utilization and repair the economics within these limits.",
+      "reference_answers": [
+        {
+          "id": "r1",
+          "mechanism": "Lights-out automation",
+          "idea": "Add pallet changers, bar feeders, or robotic part handling so machines run unattended through nights and weekends without a full crew.",
+          "scope_note": "Any unattended/automated machine-tending that converts idle hours to cutting hours without proportional labor (lights-out, robotic load/unload, pallet pools); distinct from getting one human to tend several machines (r8)."
+        },
+        {
+          "id": "r2",
+          "mechanism": "Shift restructuring",
+          "idea": "Reshape labor coverage with staggered, partial, or weekend shifts to extend the hours machines are attended without a full second crew.",
+          "scope_note": "Rearranging human schedules to widen operating hours (split shifts, weekend-only crew, four-day-ten staggering, overlapping starts); about labor time-coverage, not automation (r1) or growing the labor pool (r16)."
+        },
+        {
+          "id": "r3",
+          "mechanism": "Changeover reduction",
+          "idea": "Cut non-cutting setup time through SMED-style tooling and fixturing so each available hour yields more spindle-up time.",
+          "scope_note": "Reducing setup/changeover/non-cutting time (SMED, quick-change fixtures, preset tooling, standardized work-holding); about machine-on-but-not-cutting losses, distinct from material readiness (r14)."
+        },
+        {
+          "id": "r4",
+          "mechanism": "Schedule optimization",
+          "idea": "Sequence and dispatch jobs to minimize gaps and batch similar setups so machine time is densely packed.",
+          "scope_note": "Better scheduling/sequencing/dispatching and job batching to close idle gaps (finite-capacity scheduling, similar-setup grouping); the planning lever, distinct from diagnosing root causes of idle (r9)."
+        },
+        {
+          "id": "r5",
+          "mechanism": "Capacity brokering",
+          "idea": "Sell idle machine-time outward by subcontracting for other shops or listing capacity on a manufacturing marketplace.",
+          "scope_note": "Monetizing spare capacity by becoming a sub/supplier to others (Xometry-style marketplaces, contract machining for peers, fill-in work); selling time outward, distinct from a reciprocal peer alliance (r11)."
+        },
+        {
+          "id": "r6",
+          "mechanism": "Off-peak pricing",
+          "idea": "Use lead-time tiers or discounts that pull customer demand into the currently idle night and weekend windows.",
+          "scope_note": "Price/lead-time incentives that shift WHEN demand arrives into troughs (expedite premiums, off-peak discounts, flexible-date pricing); a demand-shaping lever inside existing customers, not winning new work (r13)."
+        },
+        {
+          "id": "r7",
+          "mechanism": "Mix shift",
+          "idea": "Pursue a different blend of work, such as higher-volume or steadier programs, to fill the lumpy troughs in the current order book.",
+          "scope_note": "Changing the type/mix of jobs pursued to smooth demand (target higher-volume runs, steadier repeat work, less lumpy customers); about what work is sought, distinct from new adjacent service lines (r12)."
+        },
+        {
+          "id": "r8",
+          "mechanism": "Cross-training",
+          "idea": "Train operators to run multiple machines at once so a single machinist keeps several spindles cutting.",
+          "scope_note": "Multi-machine tending via flexible/cross-trained labor (one operator, several machines, broadened skill matrix); raising machines-per-worker, distinct from robotic automation (r1) and adding shifts (r2)."
+        },
+        {
+          "id": "r9",
+          "mechanism": "Bottleneck diagnosis",
+          "idea": "Measure OEE and trace exactly why machines sit idle, then attack the dominant root cause.",
+          "scope_note": "Diagnostic measurement of idle causes (OEE/utilization analytics, machine monitoring, waiting-on-X root-cause analysis); the find-the-cause lever, distinct from scheduling action (r4)."
+        },
+        {
+          "id": "r10",
+          "mechanism": "Predictive maintenance",
+          "idea": "Reduce unplanned breakdown downtime through condition-based and predictive maintenance so capacity isn't lost to failures.",
+          "scope_note": "Cutting unplanned downtime via maintenance strategy (predictive/condition-based/preventive upkeep, spindle health monitoring); recovering hours lost to failure, distinct from setup losses (r3)."
+        },
+        {
+          "id": "r11",
+          "mechanism": "Capacity pooling",
+          "idea": "Form a reciprocal capacity-sharing alliance with peer shops to absorb each other's overflow and troughs.",
+          "scope_note": "Mutual/co-op capacity sharing among peers (overflow swaps, shared-capacity alliance, regional shop network); reciprocal arrangement, distinct from one-directional brokering of your own time (r5)."
+        },
+        {
+          "id": "r12",
+          "mechanism": "New service lines",
+          "idea": "Monetize idle time with adjacent offerings such as rapid prototyping, low-volume runs, or inspection-as-a-service.",
+          "scope_note": "Adding adjacent revenue services that use the equipment (prototyping, short-run, metrology/inspection services, finishing); creating new demand categories, distinct from rebalancing the existing job mix (r7)."
+        },
+        {
+          "id": "r13",
+          "mechanism": "Quoting throughput",
+          "idea": "Win more fill work by quoting faster and bidding more jobs through automated or streamlined estimating.",
+          "scope_note": "Raising the velocity/volume of the sales pipeline (automated quoting, faster estimating, bidding more RFQs); a demand-acquisition lever on the front office, distinct from pricing incentives (r6)."
+        },
+        {
+          "id": "r14",
+          "mechanism": "Material flow",
+          "idea": "Stage and kit raw stock, programs, and tooling so jobs are ready and machines never wait on inputs.",
+          "scope_note": "Ensuring upstream readiness so machines don't idle waiting (kitting, material staging, pre-released NC programs, tool pre-staging); input-availability lever, distinct from setup speed itself (r3)."
+        },
+        {
+          "id": "r15",
+          "mechanism": "Baseload contract",
+          "idea": "Lock in a long-term take-or-pay or volume-commitment customer to fill the predictable trough with steady work.",
+          "scope_note": "Securing committed anchor volume to fill troughs (take-or-pay, long-term supply agreement, dedicated-capacity contract); guaranteeing baseload demand, distinct from chasing a steadier mix opportunistically (r7)."
+        },
+        {
+          "id": "r16",
+          "mechanism": "Labor pipeline",
+          "idea": "Grow the future skilled-labor supply through apprenticeships and training partnerships to eventually staff more hours.",
+          "scope_note": "Expanding the skilled-worker pool over time (apprenticeships, trade-school pipelines, in-house training programs); a longer-horizon labor-supply lever, distinct from rescheduling existing staff (r2)."
+        }
+      ]
+    }
+  ]
+}

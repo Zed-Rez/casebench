@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.log
+# Cache and generated reports; keep the directory but not its contents.
+results/cache/
+results/results.json
+results/leaderboard.md
+# Keep the human-gold seed and protocol under version control (data/gold/*).

@@ -1,0 +1,42 @@
+{
+  "case_id": "bookstore-decline",
+  "annotator": "seed-single-rater",
+  "note": "ILLUSTRATIVE single-rater harness exerciser, NOT a validated gold standard. Axes intentionally de-collinear. See README.",
+  "labels": [
+    {
+      "idea_text": "Curated Local Press & Self-Publishing Studio: Convert 200\u2013400 sq ft in each store into a fee-based short-run printing and binding station, partnering with a vendor like Espresso Book Machine or similar on-demand hardware. Local authors, genealogists, small nonprofits, and school groups pay $150\u2013$500 per project to produce physical books, chapbooks, or memoirs; the chain takes a margin on paper/binding and sells finished copies on consignment on a dedicated 'Made Here' shelf. This creates a recurring revenue stream tied to community identity, drives repeat visits from creators and their networks, and differentiates meaningfully from Amazon without requiring the chain to abandon its bookseller identity.",
+      "feasibility": 2,
+      "impact": 2,
+      "originality": 2,
+      "divergence": 1
+    },
+    {
+      "idea_text": "Subscription-Based 'Book Concierge' Home Delivery: Launch a hyper-local monthly subscription ($30\u2013$50/month) where a trained staff member \u2014 not an algorithm \u2014 hand-selects and delivers two to three books to a subscriber's home within the store's trade area, accompanied by a handwritten note explaining the choices. Fulfillment is done by existing staff during slow morning hours using personal or store vehicles, with route density managed by zip code to keep costs under $6 per delivery. This monetizes the staff expertise customers already cite as the brand's top asset, builds recurring revenue that smooths seasonal swings, and is essentially impossible for Amazon to replicate authentically because it is genuinely personal and local.",
+      "feasibility": 1,
+      "impact": 2,
+      "originality": 2,
+      "divergence": 2
+    },
+    {
+      "idea_text": "Anchor-Tenant Revenue Share with Complementary Micro-Businesses: Sub-lease 300\u2013600 sq ft of underperforming floor space in each store to a highly compatible micro-business \u2014 specialty tea or coffee roaster, local map and stationery maker, vintage magazine dealer \u2014 under a hybrid model of a modest fixed rent plus 8\u201312% of their in-store gross sales. Selection criteria require zero brand conflict, synergistic dwell-time appeal, and operator willingness to cross-promote. This immediately monetizes dead square footage, increases the average visit duration and basket size for book buyers, and gives the chain a variable income layer without requiring capital expenditure or retail expertise outside its core competency.",
+      "feasibility": 2,
+      "impact": 2,
+      "originality": 1,
+      "divergence": 2
+    },
+    {
+      "idea_text": "Corporate & School 'Reading Culture' Program Contracts: Sell annual B2B packages to mid-sized regional employers and K\u201312 schools: for companies, a curated monthly book drop for employee book clubs plus a quarterly author talk held in-store; for schools, a semester reading-list fulfillment contract where the chain guarantees availability and a per-pupil bulk discount in exchange for exclusivity. A single mid-sized employer contract at $25,000/year or a school district contract covering 500 students moves more margin-accretive volume than hundreds of walk-in transactions and requires no new physical infrastructure. Sales effort can be concentrated in each store's local market where the brand's goodwill already opens doors.",
+      "feasibility": 2,
+      "impact": 1,
+      "originality": 1,
+      "divergence": 1
+    },
+    {
+      "idea_text": "Experience-Ticketed Evening Programming with Dynamic Space Use: After retail close (7\u20139 PM), convert store floor space into ticketed events \u2014 author dinners, literary trivia nights, themed reading-and-pairing evenings with a local brewery or winery \u2014 priced at $25\u2013$60 per person, with ticket sales handled through a simple platform like Eventbrite and alcohol served under a temporary event permit or via a licensed co-host. Critically, every ticket includes a $10 store credit redeemable only on books purchased that evening, directly converting event attendance into book revenue. This uses already-leased space that is otherwise dark, requires minimal capital, and turns the stores' main-street locations into genuine community gathering venues rather than just retail outlets.",
+      "feasibility": 3,
+      "impact": 1,
+      "originality": 1,
+      "divergence": 2
+    }
+  ]
+}

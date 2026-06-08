@@ -1,0 +1,42 @@
+{
+  "case_id": "clinic-no-shows",
+  "annotator": "seed-single-rater",
+  "note": "ILLUSTRATIVE single-rater seed, not validated. See README.",
+  "labels": [
+    {
+      "idea_text": "Slot-Specific Risk Scoring with Targeted Same-Day Standby Fills: Use 18 months of appointment history to build a logistic regression model that assigns each booked appointment a no-show probability score based on day-of-week, specialty, payer type, visit type (new vs. established), patient age, and prior no-show history. High-risk slots\u2014particularly Monday mornings and first-time Medicaid visits\u2014automatically trigger a standby queue: patients already on the waitlist for that specialty receive a text the prior afternoon offering the slot if it opens, confirmed via one-tap reply. This converts what would be dead capacity into a filled slot without adding front-desk call volume, and the model improves continuously as outcomes feed back in. The approach is feasible because the data already exists in the EHR/scheduling system, lightweight ML tools are available in most modern practice management platforms or via a one-time analyst build, and standby texting requires only a basic outbound messaging integration.",
+      "feasibility": 2,
+      "impact": 3,
+      "originality": 2,
+      "divergence": 1
+    },
+    {
+      "idea_text": "Friction-Reducing Pre-Visit Digital Completion: A meaningful share of no-shows among first-time patients reflects anxiety about paperwork, insurance confusion, or simply forgetting why they booked weeks ago. Three to five days before the appointment, send a structured pre-visit link\u2014mobile-optimized, available in Spanish and English\u2014that lets patients complete intake forms, confirm insurance, review exactly what to bring, see a photo and brief bio of their provider, and confirm or cancel in one tap. Critically, completion of the pre-visit packet triggers a small but real commitment signal (behavioral economics: the IKEA effect of invested effort) that measurably reduces cancellation. The link also captures a reschedule-rather-than-abandon option for patients who can't make the original time, recovering the slot for rebooking instead of losing it entirely. Implementation requires a one-time integration between the scheduling system and a patient portal or lightweight form tool, and costs are recoverable against even a 2-point no-show reduction.",
+      "feasibility": 3,
+      "impact": 2,
+      "originality": 1,
+      "divergence": 1
+    },
+    {
+      "idea_text": "Community Health Worker Outreach for Chronic High-Risk Segments: For Medicaid patients with two or more prior no-shows\u2014a small, identifiable cohort that disproportionately drives the aggregate rate\u2014assign a community health worker (CHW) or medical assistant to make a single warm phone call 48 hours before the appointment, not as a robocall reminder but as a genuine barrier-identification conversation: transportation, childcare, work schedule, or confusion about the visit purpose. CHWs document the barrier and either connect the patient to existing resources (Medicaid ride benefits, on-site interpreter scheduling, telehealth conversion) or flag for rescheduling before the slot is wasted. This is not front-desk work\u2014it requires a dedicated outreach role or a contracted CHW organization, which several metro markets already have through Federally Qualified Health Center partnerships. The ROI is favorable because each recovered slot across a 12-clinic network at specialty reimbursement rates ($200\u2013$600) far exceeds the marginal cost of a CHW hour.",
+      "feasibility": 2,
+      "impact": 2,
+      "originality": 2,
+      "divergence": 2
+    },
+    {
+      "idea_text": "Overbooking Calibrated by Slot-Type, Not Clinic-Wide Averages: Most clinics that overbook do so using a single network-wide no-show rate, which means they underbook for high-risk slots and overbook for reliable ones, producing both wasted capacity and patient-experience damage from long waits. Instead, apply the risk scores from the predictive model to set overbook levels at the individual slot level: a Monday 8 a.m. first-visit slot with a Medicaid payer might carry one scheduled overbook, while a Wednesday afternoon established-patient slot carries none. To prevent the scenario where everyone shows up, cap overbooking only in slot types where historical dual-show rates are demonstrably below 15%, and build a same-day float protocol where one provider per clinic per morning is designated to absorb overflow for the first 90 minutes before transitioning to scheduled work. This is operationally uncomfortable but clinically and financially standard practice in high-volume specialties; the key is making it slot-specific rather than blunt.",
+      "feasibility": 2,
+      "impact": 2,
+      "originality": 2,
+      "divergence": 1
+    },
+    {
+      "idea_text": "Appointment Ownership Transfer via Peer Referral Credit: When a patient cancels or is flagged as high no-show risk, offer them the ability to 'refer' the slot to a friend or family member who needs the same specialty care\u2014via a simple shareable link sent by text\u2014with a small, payer-compliant incentive (a $10 pharmacy gift card or a waived copay credit on their next visit, structured to comply with anti-kickback safe harbors for nominal value items). This repurposes the social network of existing patients as a real-time waitlist and is particularly effective in tight-knit communities common in urban Medicaid populations. The referring patient retains goodwill rather than feeling penalized for canceling, the slot is filled by someone who actively sought it out and is therefore highly likely to attend, and the clinic avoids cold outreach to strangers. Execution requires only a templated text with a booking link tied to the canceling patient's record, and legal review to confirm the incentive structure fits within nominal-value safe harbor guidelines.",
+      "feasibility": 1,
+      "impact": 1,
+      "originality": 3,
+      "divergence": 3
+    }
+  ]
+}
