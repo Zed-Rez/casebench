@@ -16,6 +16,13 @@ hints) with a curated set of **reference answers**, each tagged with its *core
 mechanism* and a *scope note*. The candidate is shown the problem (not the
 references), and a fixed LLM judge rates every idea on four independent axes.
 
+![CASE-Bench results: Idea Quality and Portfolio Diversity with 95% bootstrap CIs](docs/quality_ci.png)
+
+_Canonical run (16 cases × 3 samples, disjoint Opus judge panel). Sonnet leads on
+Quality with non-overlapping CIs (Δ 6.3, paired bootstrap p≈0.0005); the two are a
+tie on the diversity diagnostic (overlapping CIs). Regenerate with
+`python scripts/plot_results.py` after a run (needs `matplotlib`)._
+
 > **What this is not.** An earlier version pitched reference-overlap as a
 > training-contamination probe. That claim was wrong by construction (hand-
 > authored, withheld, paraphrase-dodgeable references can't detect memorization)
