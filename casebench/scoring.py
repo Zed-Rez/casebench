@@ -24,7 +24,7 @@ DIAGNOSTIC — "divergence" (decision: which model explores beyond the playbook?
         divergence_score = 100 * mean(divergence / 3)
         convergence_rate = fraction of ideas at divergence <= 1 (a known move)
 
-COMPOSITE — a clearly-secondary convenience: 0.7*quality + 0.3*divergence,
+COMPOSITE — a clearly-secondary convenience: 0.7*quality + 0.3*diversity,
     additive and bounded (never a multiplier).
 
 All sub-metrics are reported beside every headline so a single number never hides
@@ -184,6 +184,9 @@ def score_case(
 class ModelScore:
     model: str
     quality_score: float          # mean across cases — primary leaderboard number
+    # NOTE: the runner repurposes this field to hold the PORTFOLIO DIVERSITY score
+    # (mechanism coverage + intra-slate dissimilarity) and emits it as the JSON key
+    # "diversity_score". Per-idea reference-divergence lives on CaseScore only.
     divergence_score: float
     composite_score: float
     n_cases: int

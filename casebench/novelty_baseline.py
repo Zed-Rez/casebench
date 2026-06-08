@@ -20,7 +20,6 @@ import re
 from collections import Counter
 
 from .generate import Idea
-from .judge import Verdict
 
 _TOKEN = re.compile(r"[a-z0-9]+")
 _STOP = set(

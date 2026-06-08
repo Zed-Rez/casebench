@@ -81,14 +81,14 @@ diversity = 100 · ½ · ( mechanism_coverage + intra_slate_dissimilarity )
 where `mechanism_coverage` = fraction of the slate landing on *distinct* reference
 mechanisms (5 clones of one move ≈ 1/5; five distinct mechanisms ≈ 1) and
 `intra_slate_dissimilarity` = mean pairwise lexical distance among the model's own
-ideas. This is a **portfolio** property, deliberately chosen because per-idea
-"distance from the references" turned out ~0.75-correlated with per-idea
+ideas. This is a **portfolio** property, deliberately chosen because in our canonical
+run per-idea "distance from the references" was ~0.75-correlated with per-idea
 originality (the same construct twice). Portfolio diversity is near-orthogonal to
 originality instead (the report prints both correlations so you can check). Per-
 idea reference-divergence is kept only as a sub-metric, and is feasibility-gated
 so an incoherent idea earns no credit on any board.
 
-A clearly-secondary additive composite (`0.7·quality + 0.3·divergence`) is also
+A clearly-secondary additive composite (`0.7·quality + 0.3·diversity`) is also
 reported for convenience — never as a multiplier.
 
 ### Statistical rigor
@@ -197,9 +197,10 @@ To add a case, append an object with `id`, `title`, `domain`, `archetype`,
   cross-judge leniency delta. The canonical board avoids it entirely (disjoint
   judges). Same-family judges (e.g. two Opus versions) are more correlated than
   cross-family ones, which inflates agreement somewhat — read κ with that in mind.
-- **Frontier compression.** On two strong, similar models the judge uses a narrow
-  band (impact clusters at 2; the feasibility-0 gate rarely fires because both
-  models propose feasible ideas), so separation rests mostly on originality. Add a
+- **Frontier compression.** On two strong, similar models (as in our canonical run)
+  the judge uses a narrow band (impact clusters at 2; the feasibility-0 gate rarely
+  fires because both models propose feasible ideas), so separation rests mostly on
+  originality. Reported figures are from that run; re-running resamples. Add a
   deliberately weaker generator to exercise the gate and widen the spread, and
   read the per-axis sub-metrics, not just the headline.
 - **Impact axis is provisional.** Empirically impact is the least-discriminating

@@ -84,6 +84,8 @@ def _cmd_ablate(args) -> int:
         g = gen.generate_for_case(model, c, n=args.ideas, temperature=args.temperature)
         batch = {v.index: v for v in judging.judge_case(c, g.ideas, judge_model=jm)}
         for i in range(len(g.ideas)):
+            if i not in batch:        # judge omitted this idea in the batch pass
+                continue
             iso = judging.judge_idea_isolated(c, g.ideas, i, judge_model=jm)
             for axis in stats.AXES:
                 deltas.append(abs(getattr(batch[i], axis) - getattr(iso, axis)))

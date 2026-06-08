@@ -88,7 +88,7 @@ def _cached_generation(model, case, s, cfg, log):
 
 
 def _cached_verdicts(model, case, ideas, s, judge_model, p, cfg, log):
-    f = CACHE_DIR / f"judge__{_safe(model)}__{case['id']}__s{s}__{_safe(judge_model)}__p{p}__{_h_judge(model, case['id'], s, judge_model, p)}.json"
+    f = CACHE_DIR / f"judge__{_safe(model)}__{case['id']}__s{s}__{_safe(judge_model)}__p{p}__{_h_judge(model, case['id'], s, judge_model, p, cfg.n_ideas, cfg.temperature)}.json"
     if cfg.use_cache and f.exists():
         blob = json.loads(f.read_text())
         return [judging.Verdict(**v) for v in blob["verdicts"]]
